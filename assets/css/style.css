@@ -1,0 +1,93 @@
+:root {
+  --dark-grey: #1d1f26;
+  --blue-black: #2c3e50;
+  --tapestry: #b556a2;
+  --butterfly-bush: #7652a1;
+  --picton-blue: #50ace4;
+  --font-color: rgb(224, 216, 216);
+}
+
+html {
+  background-image: linear-gradient(var(--blue-black) 0%, var(--butterfly-bush) 100%);
+  color: var(--font-color);
+}
+
+a,
+a:visited {
+  color: var(--font-color);
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: var(--blue-black);
+  border-bottom: 1px solid var(--dark-grey);
+  padding: 5px;
+}
+
+header h1 {
+  grid-column: 1/2;
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+header p {
+  grid-column: 2/3;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+header nav ul {
+  grid-column: 3/4;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: inline-block;
+  text-align: right;
+}
+
+header nav ul li {
+  display: inline-block;
+  height: 100%;
+  margin: auto;
+  font-size: 1.3rem;
+  padding: 5px 2%;
+}
+
+header nav ul li a {
+  text-decoration: none;
+}
+
+#portfolio {
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 0 400px;
+}
+
+.project-container {
+  position: relative;
+}
+
+.project-container a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+
+header {
+  /* background-color: ; */
+}
+
+pre {
+  line-height: 1.5;
+}
+
+.underline {
+  text-decoration: underline;
+}
