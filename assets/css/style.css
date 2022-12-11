@@ -1,14 +1,14 @@
 :root {
-  --dark-grey: #1d1f26;
+  --void: #030b16;
   --blue-black: #2c3e50;
-  --tapestry: #b556a2;
-  --butterfly-bush: #7652a1;
-  --picton-blue: #50ace4;
-  --font-color: rgb(224, 216, 216);
+  --fuschia: rgb(43, 22, 68) a;
+  --purple: #1c1425;
+  --blue: #4717f6;
+  --font-color: #b3b199;
 }
 
 html {
-  background-image: linear-gradient(var(--blue-black) 0%, var(--butterfly-bush) 100%);
+  background-color: var(--purple);
   color: var(--font-color);
 }
 
@@ -17,45 +17,95 @@ a:visited {
   color: var(--font-color);
 }
 
+p {
+  line-height: 1.3;
+}
+
 header {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: var(--blue-black);
-  border-bottom: 1px solid var(--dark-grey);
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  border-bottom: 1px solid var(--void);
   padding: 5px;
 }
 
 header h1 {
-  grid-column: 1/2;
-  text-align: center;
-  font-size: 2.2rem;
+  width: 70%;
+  margin: auto 0.5%;
+  font-size: 2.4rem;
 }
 
-header p {
-  grid-column: 2/3;
-  font-size: 2.2rem;
-  text-align: center;
+header nav {
+  width: 100%;
+  margin: auto;
 }
 
 header nav ul {
-  grid-column: 3/4;
-  width: 100%;
-  height: 100%;
-  margin: auto;
   display: inline-block;
+  height: 100%;
+  width: 100%;
   text-align: right;
 }
 
 header nav ul li {
   display: inline-block;
   height: 100%;
-  margin: auto;
   font-size: 1.3rem;
-  padding: 5px 2%;
+  padding: 0 2%;
 }
 
 header nav ul li a {
   text-decoration: none;
+}
+
+.hero {
+  height: 12rem;
+  background-image: url('/assets/images/hero.jpg');
+  opacity: 0.6;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 2rem;
+  position: relative;
+  top: 40%;
+  left: 0.5%;
+  opacity: 1;
+}
+
+#about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0.5%;
+}
+
+#about-me h2 {
+  font-size: 2rem;
+  display: block;
+  width: 25%;
+  text-align: center;
+  align-self: stretch;
+
+  /* border-right: 5px solid var(--blue); */
+}
+
+pre {
+  font-size: 1.1rem;
+  font-family: monospace;
+
+}
+
+.left-bracket {
+  display: inline-block;
+  max-height: 300px;
+  height: auto;
+}
+
+#about-me p {
+  display: inline-block;
+  width: 74%;
+  padding-left: 0.5%;
 }
 
 #portfolio {
@@ -78,10 +128,6 @@ header nav ul li a {
   height: 100%;
   width: 100%;
   background: white;
-}
-
-header {
-  /* background-color: ; */
 }
 
 pre {
