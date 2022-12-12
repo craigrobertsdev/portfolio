@@ -1,14 +1,14 @@
 :root {
-  --void: #030b16;
+  --void: #07020e;
   --blue-black: #2c3e50;
-  --fuschia: rgb(43, 22, 68) a;
+  --fuschia: rgb(43, 22, 68);
   --purple: #1c1425;
   --blue: #4717f6;
-  --font-color: #b3b199;
+  --font-color: #fff;
 }
 
 html {
-  background-color: var(--purple);
+  background-color: var(--void);
   color: var(--font-color);
 }
 
@@ -73,33 +73,27 @@ header nav ul li a {
   opacity: 1;
 }
 
-#about-me {
+.section {
   display: flex;
-  justify-content: center;
   align-items: center;
   margin: auto 0.5%;
+  height: 250px;
 }
 
-#about-me h2 {
+.section h2 {
   font-size: 2rem;
   display: block;
-  width: 25%;
-  text-align: center;
+  width: 12%;
   align-self: stretch;
-
-  /* border-right: 5px solid var(--blue); */
 }
 
-pre {
-  font-size: 1.1rem;
-  font-family: monospace;
-
+.picture-container {
+  width: 5%;
 }
 
-.left-bracket {
+.picture-container img {
   display: inline-block;
-  max-height: 300px;
-  height: auto;
+  height: 200px;
 }
 
 #about-me p {
@@ -109,25 +103,40 @@ pre {
 }
 
 #portfolio {
+  height: auto;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1 1 0;
+  position: relative;
+  padding: 10px;
+  width: 20%;
+  border: 3px solid var(--blue-black);
+  padding: 0;
+  margin: 5px;
+}
+
+.card header {
+  display: inline;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: auto;
+  height: auto;
+  border: 3px solid var(--fuschia);
+  background-color: var(--purple);
+  font-size: 1.2rem;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
 }
 
 .flex {
   display: flex;
   flex-wrap: wrap;
-  flex: 1 0 400px;
-}
-
-.project-container {
-  position: relative;
-}
-
-.project-container a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: white;
 }
 
 pre {
