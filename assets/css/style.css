@@ -119,13 +119,15 @@ header nav ul {
 
 /* Creates a gap between individual sections on the page */
 section,
-main {
+main,
+footer {
   margin-bottom: 3%;
 }
 
 /* Creates header block for each section of the page  */
 section h2,
-main h2 {
+main h2,
+footer h2 {
   height: 100%;
   font-size: 2.3rem;
   margin-right: 10px;
@@ -178,6 +180,38 @@ div.flex.wrap {
   justify-content: space-evenly;
 }
 
+.container {
+  width: 60%;
+  display: inline-block;
+  position: relative;
+}
+
 .card {
-  flex: 0 0 300px;
+  flex: 1 1 40%;
+  justify-content: center;
+}
+
+.feature {
+  flex: 3 1 87%;
+}
+
+.card.feature img,
+.card img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#roster *.description {
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+}
+
+footer ul {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer ul li {
 }
