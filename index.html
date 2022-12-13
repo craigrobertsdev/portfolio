@@ -4,13 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Craig Roberts Dev</title>
+    <title>Craig Roberts Portfolio</title>
+    <link href="./assets/css/reset.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <div id="photo">
+    <header class="grid-3-2">
+      <figure id="profile-photo">
         <img src="./assets/images/photo.png" />
-      </div>
+      </figure>
       <h1>Craig Roberts</h1>
       <h2>Full Stack Web Developer</h2>
       <nav>
@@ -21,35 +23,56 @@
           <li><a href="#">Resume</a></li>
         </ul>
       </nav>
-      <section id="about-me">
-        <header>About Me</header>
+    </header>
+    <section id="about-me" class="grid-2-1">
+      <h2>About Me</h2>
+      <div class="flex-rows">
         <p>
           I am a full stack web developer based in Adelaide, South Australia. For the past 10 years
           I have been working as a police officer and am currently a prosecutor at the rank of
-          Sergeant, looking to make the move into a career in software engineering. <br /><br />I am 
+          Sergeant, looking to make the move into a career in software engineering.
         </p>
         <p>
           I am currently undertaking a coding boot camp through The University of Adelaide and have
           a keen interest in full stack web development and cloud computing.
         </p>
         <p>I have skills and experience in the following languages and frameworks:</p>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Javascript</li>
-          <li>C#</li>
-          <li>React</li>
-          <li>Node.js</li>
-          <li>Express</li>
-          <li>MongoDB</li>
-          <li>SQL</li>
-        </ul>
-      </section>
+        <div class="flex width-100">
+          <div class="capability-list">
+            <p class="list-header">Languages</p>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Javascript</li>
+              <li>C#</li>
+            </ul>
+          </div>
+          <div class="capability-list">
+            <p>Frameworks</p>
+            <ul>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Express</li>
+            </ul>
+          </div>
+          <div class="capability-list">
+            <p>Other technologies</p>
+            <ul>
+              <li>MongoDB</li>
+              <li>SQL</li>
+              <li>Git</li>
+              <li>Microsoft Azure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <main id="portfolio">
-        <header>Portfolio</header>
-        <figure class="card feature">
-          <img src="" />
+    <main id="portfolio" class="grid-2-1">
+      <h2>Portfolio</h2>
+      <div class="flex wrap">
+        <section class="card feature">
+          <img src="./assets/images/roster.jpg" />
           <!-- roster -->
           <div class="description">
             <h3>Shift Worker Roster</h3>
@@ -60,10 +83,10 @@
             </p>
             <p>React, Node.js, ASP.Net Core, MySQL</p>
           </div>
-        </figure>
+        </section>
 
-        <figure class="card">
-          <img src="" />
+        <section class="card">
+          <img src="./assets/images/spotify.jpg" />
           <!-- spotify -->
           <div class="description">
             <h3>Spotify Artist Suggester</h3>
@@ -74,10 +97,10 @@
             </p>
             <p>Spotify API, JQuery, Bootstrap, JSON</p>
           </div>
-        </figure>
+        </section>
 
-        <figure class="card">
-          <img src="" />
+        <section class="card">
+          <img src="./assets/images/workout.jpg" />
           <!-- workout planner -->
           <div class="description">
             <h3>Workout Planner</h3>
@@ -88,11 +111,11 @@
             </p>
             <p>MySQL, Express, Node, Bootstrap</p>
           </div>
-        </figure>
-      </main>
-    </header>
+        </section>
+      </div>
+    </main>
   </body>
-  <footer>
+  <footer id="contact">
     <header>Contact</header>
     <ul>
       <li><a href="mailto:craig.roberts11@outlook.com">craig.roberts11@outlook.com</a></li>
