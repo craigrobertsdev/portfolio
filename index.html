@@ -26,7 +26,7 @@
     </header>
     <section id="about-me" class="grid-2-1">
       <h2>About Me</h2>
-      <div class="flex-rows">
+      <div class="flex wrap">
         <p>
           I am a full stack web developer based in Adelaide, South Australia. For the past 10 years
           I have been working as a police officer and am currently a prosecutor at the rank of
@@ -72,51 +72,38 @@
       <h2>Portfolio</h2>
       <div class="flex wrap">
         <section id="roster" class="card feature">
-          <div class="container">
-            <img src="./assets/images/roster.jpg" alt="Planner" />
-          </div>
-          <!-- roster -->
-          <div class="description">
-            <h3>Shift Worker Roster</h3>
-            <p>
+          <img src="./assets/images/roster.jpg" alt="Calendar planner" />
+          <div class="details-container">
+            <h3 class="portfolio-title">Shift Worker Roster</h3>
+            <p class="description">
               A rostering application for organisations who work around the clock to manage their
-              employee's shifts on a day to day basis. Designed with flexibility and data
-              consistency in mind.
+              employee's shifts on a day to day basis.
             </p>
-            <p>React, Node.js, ASP.Net Core, MySQL</p>
+            <p class="tech-stack">React, Node.js, ASP.Net Core, MySQL</p>
           </div>
         </section>
 
         <section id="spotify" class="card">
-          <div class="container">
-            <img src="./assets/images/spotify.jpg" alt="DJ turntables" />
-          </div>
-
-          <!-- spotify -->
-          <div class="description">
-            <h3>Spotify Artist Suggester</h3>
-            <p>
+          <img src="./assets/images/spotify.jpg" alt="DJ turntables" />
+          <div class="details-container">
+            <h3 class="portfolio-title">Spotify Artist Suggester</h3>
+            <p class="description">
               Log in with your Spotify account and receive suggestions for new music based on your
-              listening history. <br /><br />Parents, prepare yourselves for endless new Wiggles
-              tunes!
+              listening history.
             </p>
-            <p>Spotify API, JQuery, Bootstrap, JSON</p>
+            <p class="tech-stack">Spotify API, JQuery, Bootstrap, JSON</p>
           </div>
         </section>
 
         <section id="workout" class="card">
-          <div class="container">
-            <img src="./assets/images/workout.jpg" alt="Weight room" />
-            <!-- workout planner -->
-            <div class="description">
-              <h3>Workout Planner</h3>
-              <p>
-                Create your own workout plan or use templates that cover 3-6 day per week training
-                plans. This application enables the user to add their own exercises, record
-                intensity techniques on a per-set basis and track reps in reserve.
-              </p>
-              <p>MySQL, Express, Node, Bootstrap</p>
-            </div>
+          <img src="./assets/images/workout.jpg" alt="Weight room" />
+          <div class="details-container">
+            <h3 class="portfolio-title">Workout Planner</h3>
+            <p class="description">
+              Create your own workout plan or use templates that cover 3-6 day per week training
+              plans.
+            </p>
+            <p class="tech-stack">MySQL, Express, Node, Bootstrap</p>
           </div>
         </section>
       </div>

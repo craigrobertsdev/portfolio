@@ -27,6 +27,7 @@ p {
 
 .flex {
   display: flex;
+  gap: 10px;
 }
 
 .wrap {
@@ -122,6 +123,7 @@ section,
 main,
 footer {
   margin-bottom: 3%;
+  margin-right: 5%;
 }
 
 /* Creates header block for each section of the page  */
@@ -138,17 +140,13 @@ footer h2 {
 }
 
 /* Manages text paragraphs in About Me section */
-.flex-rows {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+#about-me div {
   gap: 20px;
 }
 
-.flex-rows p {
+#about-me div p {
   width: 100%;
 }
-
 /* This section of CSS deals with the lists of capabilities in About Me section */
 
 /* Shifts the lists away from left side of box */
@@ -175,43 +173,68 @@ footer h2 {
 
 /* This section of CSS deals with the Portfolio cards */
 
-div.flex.wrap {
-  flex: 4;
-  justify-content: space-evenly;
-}
-
-div.description {
-  display: inline-block;
-  position: relative;
-}
-
-.container {
-  width: 100%;
-  display: inline-block;
-  align-items: center;
-  position: relative;
-}
-
+/* Regular portfolio flex item. Relative position enables description to be absolutely positioned */
 .card {
-  flex: 1 1 40%;
-  justify-content: center;
+  height: auto;
+  flex-grow: 2;
+  flex-shrink: 1;
+  width: 300px;
 }
 
 .feature {
-  flex: 3 1 75%;
+  flex-grow: 4;
+  flex-shrink: 1;
+  width: 100%;
+  min-width: auto;
 }
 
-.card.feature img,
+/* Ensures images fit within the card container */
 .card img {
-  display: inline-block;
-  max-width: 100%;
-  max-height: 100%;
+  object-fit: fill;
+  width: 100%;
+  height: 50%;
+  opacity: 0.8;
 }
 
-#roster *.description {
-  display: inline-block;
-  width: 30%;
+.feature img {
+  float: left;
+  width: 60%;
   height: 100%;
+}
+
+/* Controls the descriptions for each portfolio item */
+.card > .details-container {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  background-color: #505050;
+}
+
+.feature > .details-container {
+  width: 40%;
+  height: 100%;
+}
+
+.portfolio-title {
+  padding: 5px;
+  margin: 10px auto;
+  font-size: 1.7rem;
+  width: fit-content;
+  background-color: rgb(125, 189, 106);
+}
+
+.description {
+  margin: 10px;
+  background-color: #cfcfcf;
+}
+
+.description:hover {
+  opacity: 1;
+}
+
+.tech-stack {
+  margin: 10px;
+  background-color: #cfcfcf;
 }
 
 /* This CSS section deals with the footer content */
@@ -222,10 +245,13 @@ footer h2 {
 }
 
 footer ul {
-  margin-right: 30%;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 5%;
   align-items: center;
+}
+
+footer ul li {
+  min-width: auto;
 }
 
 .image-container {
@@ -235,7 +261,4 @@ footer ul {
 
 .image-container img {
   width: 100%;
-}
-
-footer ul li {
 }
