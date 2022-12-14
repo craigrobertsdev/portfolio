@@ -180,9 +180,15 @@ div.flex.wrap {
   justify-content: space-evenly;
 }
 
-.container {
-  width: 60%;
+div.description {
   display: inline-block;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  display: inline-block;
+  align-items: center;
   position: relative;
 }
 
@@ -192,7 +198,7 @@ div.flex.wrap {
 }
 
 .feature {
-  flex: 3 1 87%;
+  flex: 3 1 75%;
 }
 
 .card.feature img,
@@ -208,9 +214,27 @@ div.flex.wrap {
   height: 100%;
 }
 
+/* This CSS section deals with the footer content */
+
+footer h2 {
+  padding-bottom: 5%;
+  margin-top: 0;
+}
+
 footer ul {
-  justify-content: space-evenly;
+  margin-right: 30%;
+  justify-content: center;
+  gap: 5%;
   align-items: center;
+}
+
+.image-container {
+  max-width: 40px;
+  max-height: 50px;
+}
+
+.image-container img {
+  width: 100%;
 }
 
 footer ul li {
