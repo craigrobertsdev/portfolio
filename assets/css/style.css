@@ -1,148 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&display=swap');
+
 :root {
-  --void: #07020e;
-  --blue-black: #2c3e50;
-  --fuschia: rgb(43, 22, 68);
-  --purple: #1c1425;
-  --blue: #4717f6;
-  --font-color: #fff;
+  --background: #cddce4;
+  --text-color: #000;
+  --border-color: #8a17cc;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
 }
 
 html {
-  background-color: var(--void);
-  color: var(--font-color);
+  background-color: var(--background);
+  font-size: 16px;
+  padding: 20px;
 }
 
-a,
-a:visited {
-  color: var(--font-color);
+a {
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 p {
-  line-height: 1.3;
-}
-
-header {
-  display: flex;
-  width: 100%;
-  height: 4rem;
-  border-bottom: 1px solid var(--void);
-  padding: 5px;
-}
-
-header h1 {
-  width: 70%;
-  margin: auto 0.5%;
-  font-size: 2.4rem;
-}
-
-header nav {
-  width: 100%;
-  margin: auto;
-}
-
-header nav ul {
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  text-align: right;
-}
-
-header nav ul li {
-  display: inline-block;
-  height: 100%;
-  font-size: 1.3rem;
-  padding: 0 2%;
-}
-
-header nav ul li a {
-  text-decoration: none;
-}
-
-.hero {
-  height: 12rem;
-  background-image: url('/assets/images/hero.jpg');
-  opacity: 0.6;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 2rem;
-  position: relative;
-  top: 40%;
-  left: 0.5%;
-  opacity: 1;
-}
-
-.section {
-  display: flex;
-  align-items: center;
-  margin: auto 0.5%;
-  height: 250px;
-}
-
-.section h2 {
-  font-size: 2rem;
-  display: block;
-  width: 12%;
-  align-self: stretch;
-}
-
-.picture-container {
-  width: 5%;
-}
-
-.picture-container img {
-  display: inline-block;
-  height: 200px;
-}
-
-#about-me p {
-  display: inline-block;
-  width: 74%;
-  padding-left: 0.5%;
-}
-
-#portfolio {
-  height: auto;
-  justify-content: space-between;
-}
-
-.card {
-  flex: 1 1 0;
-  position: relative;
-  padding: 10px;
-  width: 20%;
-  border: 3px solid var(--blue-black);
-  padding: 0;
-  margin: 5px;
-}
-
-.card header {
-  display: inline;
-  position: absolute;
-  top: 2%;
-  left: 2%;
-  width: auto;
-  height: auto;
-  border: 3px solid var(--fuschia);
-  background-color: var(--purple);
-  font-size: 1.2rem;
-}
-
-.card img {
-  width: 100%;
-  height: 100%;
+  font-size: 1.1rem;
 }
 
 .flex {
   display: flex;
+}
+
+.wrap {
   flex-wrap: wrap;
 }
 
-pre {
-  line-height: 1.5;
+.width-100 {
+  width: 100%;
 }
 
-.underline {
+.grid-3-2 {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+#profile-photo {
+  grid-row: 1/3;
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 50px;
+}
+
+#profile-photo img {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+header {
+  margin-bottom: 5%;
+}
+
+header h1 {
+  grid-column: 2/3;
+  font-size: 2.5rem;
+  position: relative;
+  top: 70px;
+}
+
+header h2 {
+  position: relative;
+  top: 10px;
+  opacity: 0.7;
+}
+
+/* <h1> tag above name */
+header h1::before {
+  content: '<h1>';
+  font-size: 12px;
+  opacity: 0.5;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+/* </h1> tag below name */
+header h1::after {
+  content: '</h1>';
+  font-size: 12px;
+  opacity: 0.5;
+  position: absolute;
+  top: 2.4rem;
+  left: -10px;
+}
+
+header h2 {
+  grid-column: 2/3;
+  font-size: 1.7rem;
+  position: relative;
+}
+
+header nav {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  padding: 10px;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  column-gap: 10px;
+}
+
+/* Creates a 2 col 1 row grid  */
+.grid-2-1 {
+  display: grid;
+  grid-template-columns: 25% auto;
+}
+
+/* Creates a gap between individual sections on the page */
+#about-me,
+main,
+footer {
+  margin-bottom: 3%;
+  margin-right: 10%;
+}
+
+/* Creates header block for each section of the page  */
+section h2,
+main h2,
+footer h2 {
+  height: 100%;
+  font-size: 2.3rem;
+  margin-right: 10px;
+  padding-top: 5%;
+  text-align: center;
+  display: inline-block;
+  border-right: 2px solid grey;
+}
+
+/* Manages text paragraphs in About Me section */
+.flex-rows {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.flex-rows p {
+  width: 100%;
+}
+
+/* This section of CSS deals with the lists of capabilities in About Me section */
+
+/* Shifts the lists away from left side of box */
+.flex.width-100 {
+  padding-left: 5%;
+}
+
+/* Ensures lists don't grow too large */
+.capability-list {
+  width: 30%;
+}
+
+/* Capability list headers */
+.capability-list p {
   text-decoration: underline;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Creates separation between list items in each capability list */
+.capability-list ul li {
+  margin-bottom: 5px;
+}
+
+/* This section of CSS deals with the Portfolio cards */
+
+#portfolio-flex-container {
+  max-width: 1000px;
+  justify-content: space-between;
+  gap: 10px;
+  margin-right: 10%;
+}
+
+/* Individual portfolio items */
+.card {
+  position: relative;
+  flex-grow: 2;
+  flex-shrink: 1;
+  width: 200px;
+  height: 300px;
+}
+
+.card:hover {
+  outline: 2px solid var(--border-color);
+}
+
+.card:hover img {
+  opacity: 1;
+}
+
+.card:hover .description {
+  background-color: #cddce4;
+}
+
+.card:hover h3 {
+  background-color: #e4d5cd;
+}
+
+/* Featured portfolio item set to be double the size of normal ones */
+.feature {
+  flex-grow: 2;
+  flex-shrink: 1;
+  width: 800px;
+  height: 400px;
+}
+
+/* Background picture for each portfolio item */
+.card img {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+/* Sets title block for non-feature card  */
+.card h3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: #e4d5cdbb;
+  padding: 1rem;
+  border: 0 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Modifies title block for the featured card */
+.feature h3 {
+  right: 0;
+  left: unset;
+  border-right: 0;
+  border-left: 2px solid #8a17cc;
+}
+
+/* Textbox on top of image. Placed  */
+.description {
+  position: absolute;
+  top: 4rem;
+  left: 3%;
+  width: 94%;
+  background-color: #cddce4cc;
+  padding: 5px;
+}
+
+.description p:first-child {
+  margin-bottom: 10px;
+}
+
+.description p:nth-child(2) {
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
+.tech-stack li {
+  margin-bottom: 2px;
+  font-size: 1.1rem;
+}
+
+/* This CSS section deals with the footer content */
+
+footer h2 {
+  padding-bottom: 5%;
+  margin-top: 0;
+}
+
+footer ul {
+  margin-right: 15%;
+  justify-content: space-evenly;
+  gap: 5%;
+  align-items: center;
+}
+
+/* Container for Linkedin and GitHub images, constrains image size */
+.image-container {
+  max-width: 40px;
+  max-height: 50px;
+}
+
+.image-container img {
+  width: 100%;
+}
+
+/* Media queries for smaller screen sizes */
+@media screen and (max-width: 1155px) {
+  #about-me,
+  main,
+  footer {
+    margin-right: 5%;
+  }
+
+  footer ul {
+    margin-right: 0;
+  }
 }

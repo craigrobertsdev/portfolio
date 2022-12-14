@@ -4,67 +4,158 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Craig Roberts Dev</title>
+    <title>Craig Roberts Portfolio</title>
+    <link href="./assets/css/reset.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <header>
+    <header class="grid-3-2">
+      <figure id="profile-photo">
+        <img src="./assets/images/photo.png" />
+      </figure>
       <h1>Craig Roberts</h1>
+      <h2>Full Stack Web Developer</h2>
       <nav>
         <ul>
           <li><a href="#about-me">About Me</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#portfolio">Portolio</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#">Resume</a></li>
         </ul>
       </nav>
     </header>
-    <div class="hero">
-      <p>Full Stack Developer</p>
-    </div>
-    <main>
-      <section id="about-me" class="section">
-        <h2>About Me:</h2>
-        <div class="picture-container">
-          <img src="/assets/images/left-bracket_20_1_40.png" class="left-bracket" />
-        </div>
+    <section id="about-me" class="grid-2-1">
+      <h2>About Me</h2>
+      <div class="flex-rows">
         <p>
           I am a full stack web developer based in Adelaide, South Australia. For the past 10 years
           I have been working as a police officer and am currently a prosecutor at the rank of
-          Sergeant, looking to make the move into a career in software engineering. <br /><br />I am
-          currently undertaking a coding boot camp through The University of Adelaide and have a
-          keen interest in full stack web development and cloud computing.
+          Sergeant, looking to make the move into a career in software engineering.
         </p>
-      </section>
+        <p>
+          I am currently undertaking a coding boot camp through The University of Adelaide and have
+          a keen interest in full stack web development and cloud computing.
+        </p>
+        <p>I have skills and experience in the following languages and frameworks:</p>
+        <div class="flex width-100">
+          <div class="capability-list">
+            <p class="list-header">Languages</p>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Javascript</li>
+              <li>C#</li>
+            </ul>
+          </div>
+          <div class="capability-list">
+            <p>Frameworks</p>
+            <ul>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Express</li>
+            </ul>
+          </div>
+          <div class="capability-list">
+            <p>Other technologies</p>
+            <ul>
+              <li>MongoDB</li>
+              <li>SQL</li>
+              <li>Git</li>
+              <li>Microsoft Azure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section id="portfolio" class="flex section">
-        <h2>Portfolio</h2>
-        <section class="card feature">
-          <a href="#"><img src="/assets/images/workout.jpg" /></a>
-          <header>Workout Planner</header>
-          <span></span>
+    <main id="portfolio" class="grid-2-1">
+      <h2>Portfolio</h2>
+      <div id="portfolio-flex-container" class="flex wrap">
+        <section id="roster" class="card feature">
+          <a href="" target="_blank"
+            ><img src="./assets/images/roster.jpg" alt="Planner" />
+
+            <!-- roster -->
+            <h3>Shift Worker Roster</h3>
+            <div class="description">
+              <p>
+                A rostering application for organisations who work around the clock to manage their
+                employee's shifts on a day to day basis.
+              </p>
+              <p>Tech stack</p>
+              <ul class="tech-stack">
+                <li>React</li>
+                <li>Node.js</li>
+                <li>ASP.Net Core Web API</li>
+                <li>MySQL</li>
+              </ul>
+            </div></a
+          >
         </section>
 
-        <section class="card">
-          <header>Spotify Music Suggester</header>
-          <a href="#"><img src="/assets/images/spotify.jpg" /></a>
+        <section id="spotify" class="card">
+          <a href="https://github.com/craigrobertsdev/spotify-suggester" target="_blank"
+            ><img src="./assets/images/spotify.jpg" alt="DJ turntables" />
+
+            <!-- spotify -->
+            <h3>Spotify Artist Suggester</h3>
+            <div class="description">
+              <p>
+                Log in with your Spotify account and receive suggestions for new music based on your
+                listening history.
+              </p>
+              <p>Tech stack</p>
+              <ul class="tech-stack">
+                <li>Spotify API</li>
+                <li>JQuery</li>
+                <li>Bootstrap</li>
+              </ul>
+            </div></a
+          >
         </section>
 
-        <section class="card">
-          <a href="https://craigrobertsdev.github.io/horiseon-seo-refactor/"></a>
+        <section id="workout" class="card">
+          <a href="https://github.com/craigrobertsdev/workout-planner" target="_blank"
+            ><img src="./assets/images/workout.jpg" alt="Weight room" />
+            <!-- workout planner -->
+            <h3>Workout Planner</h3>
+            <div class="description">
+              <p>
+                Create your own workout plan or use templates that cover 3-6 day per week training
+                plans.
+              </p>
+              <p>Tech stack</p>
+              <ul class="tech-stack">
+                <li>MySQL</li>
+                <li>Express</li>
+                <li>Node</li>
+                <li>Bootstrap</li>
+              </ul>
+            </div></a
+          >
         </section>
-      </section>
+      </div>
     </main>
   </body>
-  <footer class="flex">
-    <h2>Contact Me</h2>
-    <pre id="contact">
-{
-  Email:  <a href="mailto:craig.roberts11@outlook.com">craig.roberts11@outlook.com</a>
-  Mobile: 0407 226 002
-  <a href="https://github.com/craigrobertsdev" target="_blank">GitHub</a>
-}
-    </pre>
+  <footer id="contact" class="grid-2-1">
+    <h2>Contact</h2>
+    <ul class="flex">
+      <li><a href="mailto:craig.roberts11@outlook.com">craig.roberts11@outlook.com</a></li>
+      <li>(+61) 407 226 002</li>
+      <li>
+        <div class="image-container">
+          <a href="https://github.com/craigrobertsdev" target="_blank"
+            ><img src="./assets/images/github-mark.png"
+          /></a>
+        </div>
+      </li>
+      <li>
+        <div class="image-container">
+          <a href="https://www.linkedin.com/in/craig-roberts-9ba409243/" target="_blank"
+            ><img src="./assets/images/LI-In-Bug.png"
+          /></a>
+        </div>
+      </li>
+    </ul>
   </footer>
 </html>
