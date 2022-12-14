@@ -240,14 +240,6 @@ footer h2 {
   border-bottom: 2px solid var(--border-color);
 }
 
-/* Modifies title block for the featured card */
-.feature h3 {
-  right: 0;
-  left: unset;
-  border-right: 0;
-  border-left: 2px solid #8a17cc;
-}
-
 /* Textbox on top of image. Placed  */
 .description {
   position: absolute;
@@ -258,13 +250,20 @@ footer h2 {
   padding: 5px;
 }
 
+/* Creates space below description text */
 .description p:first-child {
   margin-bottom: 10px;
 }
 
+/* Underlines the "Tech stack" text */
 .description p:nth-child(2) {
   text-decoration: underline;
   font-size: 1.2rem;
+  text-align: center;
+}
+
+.tech-stack {
+  text-align: center;
 }
 
 .tech-stack li {
@@ -306,5 +305,144 @@ footer ul {
 
   footer ul {
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  /* Converts links in nav to column */
+  header nav ul {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    margin-top: 25px;
+  }
+
+  /* It is at this width that the featured portfolio item becomes too big for the screen */
+  .feature {
+    width: 700px;
+  }
+}
+
+/* Reduces font size  */
+@media screen and (max-width: 895px) {
+  html {
+    font-size: 12px;
+  }
+
+  /* Adjusts size of header columns to create more space for name and title */
+  .grid-3-2 {
+    grid-template-columns: 0.5fr 3fr 1fr;
+  }
+
+  /* Moves photo to left to give more room to middle column */
+  #profile-photo {
+    margin-left: 0;
+  }
+
+  /* Changes flex direction to column and increases width of container to 100% */
+  #portfolio-flex-container {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Slightly accentuates feature project*/
+  .feature {
+    box-shadow: 2px 3px #00000055;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  /* At this screen width, the side-bar section headers move to a position above the sections. The grids shift to being based on number of rows */
+
+  /* No more margin on right */
+  #about-me,
+  main,
+  footer {
+    margin-right: 0;
+  }
+
+  /* Reduces font size again */
+  html {
+    font-size: 10px;
+  }
+
+  /* Remove column for header layout */
+  .grid-3-2 {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  /* Make profile picture appropriately sized for screen size */
+  #profile-photo img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  /* Shifts header to more appropriate location */
+  header h1 {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    top: 20px;
+  }
+
+  /* Shifts title to more appropraite location */
+  header h2 {
+    grid-row: 1/2;
+    top: 60px;
+  }
+
+  header nav {
+    grid-column: 1/3;
+    grid-row: 3/4;
+  }
+
+  header nav ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+
+  /* Swap columns with rows for section layout */
+  .grid-2-1 {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+
+  /* Changes border on right to bottom border */
+  section h2,
+  main h2,
+  footer h2 {
+    height: 100%;
+    font-size: 2.3rem;
+    margin-bottom: 5px;
+    text-align: center;
+    border-bottom: 2px solid grey;
+    border-right: 0;
+  }
+
+  /* Creates space between header and beginning of section body */
+  section h2 + div,
+  main h2 + div,
+  footer h2 + ul {
+    margin-top: 5px;
+  }
+
+  /* Removes padding for consistency */
+  footer h2 {
+    padding-bottom: 0;
+  }
+  /* Ensures sufficient space for all contact items to remain on one line */
+  footer ul {
+    gap: 5px;
   }
 }

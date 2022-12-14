@@ -10,23 +10,30 @@
   </head>
   <body>
     <header class="grid-3-2">
+      <!-- Profile picutre -->
       <figure id="profile-photo">
         <img src="./assets/images/photo.png" />
       </figure>
+
+      <!-- Header and title -->
       <h1>Craig Roberts</h1>
       <h2>Full Stack Web Developer</h2>
+
+      <!-- Nav bar  -->
       <nav>
         <ul>
           <li><a href="#about-me">About Me</a></li>
-          <li><a href="#portfolio">Portolio</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Resume</a></li>
+          <li><a href="/assets/Resume.txt" target="_blank">Resume</a></li>
         </ul>
       </nav>
     </header>
     <section id="about-me" class="grid-2-1">
+      <!-- About me section -->
       <h2>About Me</h2>
       <div class="flex-rows">
+        <!-- Bio -->
         <p>
           I am a full stack web developer based in Adelaide, South Australia. For the past 10 years
           I have been working as a police officer and am currently a prosecutor at the rank of
@@ -36,7 +43,9 @@
           I am currently undertaking a coding boot camp through The University of Adelaide and have
           a keen interest in full stack web development and cloud computing.
         </p>
-        <p>I have skills and experience in the following languages and frameworks:</p>
+
+        <!-- Skill set -->
+        <p>I have skills and experience in the following:</p>
         <div class="flex width-100">
           <div class="capability-list">
             <p class="list-header">Languages</p>
@@ -68,15 +77,20 @@
       </div>
     </section>
 
+    <!-- Portfolio section -->
     <main id="portfolio" class="grid-2-1">
       <h2>Portfolio</h2>
+
+      <!-- Portfolio flex container -->
       <div id="portfolio-flex-container" class="flex wrap">
+        <!-- Feature project - Roster -->
         <section id="roster" class="card feature">
+          <!-- Makes entire flex item a hyperlink and links image -->
           <a href="" target="_blank"
             ><img src="./assets/images/roster.jpg" alt="Planner" />
 
-            <!-- roster -->
-            <h3>Shift Worker Roster</h3>
+            <!-- Project name and description are overlaid on the photo -->
+            <h3>Shift Work Roster</h3>
             <div class="description">
               <p>
                 A rostering application for organisations who work around the clock to manage their
@@ -93,11 +107,13 @@
           >
         </section>
 
+        <!-- Spotify project -->
         <section id="spotify" class="card">
+          <!-- Makes entire flex item a hyperlink and links image -->
           <a href="https://github.com/craigrobertsdev/spotify-suggester" target="_blank"
             ><img src="./assets/images/spotify.jpg" alt="DJ turntables" />
 
-            <!-- spotify -->
+            <!-- Project name and description are overlaid on the photo -->
             <h3>Spotify Artist Suggester</h3>
             <div class="description">
               <p>
@@ -114,10 +130,14 @@
           >
         </section>
 
+        <!-- Workout planner project -->
         <section id="workout" class="card">
+          <!-- Makes entire flex item a hyperlink and links image -->
+
           <a href="https://github.com/craigrobertsdev/workout-planner" target="_blank"
             ><img src="./assets/images/workout.jpg" alt="Weight room" />
-            <!-- workout planner -->
+
+            <!-- Project name and description are overlaid on the photo -->
             <h3>Workout Planner</h3>
             <div class="description">
               <p>
@@ -137,6 +157,8 @@
       </div>
     </main>
   </body>
+
+  <!-- Footer section to include methods of contacting me -->
   <footer id="contact" class="grid-2-1">
     <h2>Contact</h2>
     <ul class="flex">
