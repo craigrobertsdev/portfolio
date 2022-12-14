@@ -4,6 +4,7 @@
 :root {
   --background: #cddce4;
   --text-color: #000;
+  --border-color: #8a17cc;
 }
 
 * {
@@ -39,7 +40,7 @@ p {
 
 .grid-3-2 {
   display: grid;
-  grid-template-columns: 0.5fr 3fr 2fr;
+  grid-template-columns: 1fr 3fr 2fr;
   grid-template-rows: 1fr 1fr;
 }
 
@@ -47,6 +48,7 @@ p {
   grid-row: 1/3;
   display: inline-block;
   margin-right: 10px;
+  margin-left: 50px;
 }
 
 #profile-photo img {
@@ -118,10 +120,11 @@ header nav ul {
 }
 
 /* Creates a gap between individual sections on the page */
-section,
+#about-me,
 main,
 footer {
   margin-bottom: 3%;
+  margin-right: 10%;
 }
 
 /* Creates header block for each section of the page  */
@@ -158,7 +161,7 @@ footer h2 {
 
 /* Ensures lists don't grow too large */
 .capability-list {
-  width: 20%;
+  width: 30%;
 }
 
 /* Capability list headers */
@@ -175,43 +178,98 @@ footer h2 {
 
 /* This section of CSS deals with the Portfolio cards */
 
-div.flex.wrap {
-  flex: 4;
-  justify-content: space-evenly;
+#portfolio-flex-container {
+  max-width: 1000px;
+  justify-content: space-between;
+  gap: 10px;
+  margin-right: 10%;
 }
 
-div.description {
-  display: inline-block;
-  position: relative;
-}
-
-.container {
-  width: 100%;
-  display: inline-block;
-  align-items: center;
-  position: relative;
-}
-
+/* Individual portfolio items */
 .card {
-  flex: 1 1 40%;
-  justify-content: center;
+  position: relative;
+  flex-grow: 2;
+  flex-shrink: 1;
+  width: 200px;
+  height: 300px;
 }
 
+.card:hover {
+  outline: 2px solid var(--border-color);
+}
+
+.card:hover img {
+  opacity: 1;
+}
+
+.card:hover .description {
+  background-color: #cddce4;
+}
+
+.card:hover h3 {
+  background-color: #e4d5cd;
+}
+
+/* Featured portfolio item set to be double the size of normal ones */
 .feature {
-  flex: 3 1 75%;
+  flex-grow: 2;
+  flex-shrink: 1;
+  width: 800px;
+  height: 400px;
 }
 
-.card.feature img,
+/* Background picture for each portfolio item */
 .card img {
-  display: inline-block;
-  max-width: 100%;
-  max-height: 100%;
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
 }
 
-#roster *.description {
-  display: inline-block;
-  width: 30%;
-  height: 100%;
+/* Sets title block for non-feature card  */
+.card h3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.4rem;
+  background-color: #e4d5cdbb;
+  padding: 1rem;
+  border: 0 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+/* Modifies title block for the featured card */
+.feature h3 {
+  right: 0;
+  left: unset;
+  border-right: 0;
+  border-left: 2px solid #8a17cc;
+}
+
+/* Textbox on top of image. Placed  */
+.description {
+  position: absolute;
+  top: 4rem;
+  left: 3%;
+  width: 94%;
+  background-color: #cddce4cc;
+  padding: 5px;
+}
+
+.description p:first-child {
+  margin-bottom: 10px;
+}
+
+.description p:nth-child(2) {
+  text-decoration: underline;
+  font-size: 1.2rem;
+}
+
+.tech-stack li {
+  margin-bottom: 2px;
+  font-size: 1.1rem;
 }
 
 /* This CSS section deals with the footer content */
@@ -222,12 +280,13 @@ footer h2 {
 }
 
 footer ul {
-  margin-right: 30%;
-  justify-content: center;
+  margin-right: 15%;
+  justify-content: space-evenly;
   gap: 5%;
   align-items: center;
 }
 
+/* Container for Linkedin and GitHub images, constrains image size */
 .image-container {
   max-width: 40px;
   max-height: 50px;
@@ -237,5 +296,15 @@ footer ul {
   width: 100%;
 }
 
-footer ul li {
+/* Media queries for smaller screen sizes */
+@media screen and (max-width: 1155px) {
+  #about-me,
+  main,
+  footer {
+    margin-right: 5%;
+  }
+
+  footer ul {
+    margin-right: 0;
+  }
 }
