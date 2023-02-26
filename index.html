@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Craig Roberts Portfolio</title>
+    <title>Craig Roberts | Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
     <link href="./assets/css/reset.css" rel="stylesheet" />
     <link href="./assets/css/style.css" rel="stylesheet" />
   </head>
   <body>
+    <img src="./assets/images/background.jpg" id="background-image" />
     <header class="grid-3-2">
       <!-- Profile picutre -->
       <figure id="profile-photo">
@@ -31,141 +33,71 @@
         </ul>
       </nav>
     </header>
-    <section id="about-me" class="grid-2-1">
-      <!-- About me section -->
-      <h2>About Me</h2>
-      <div class="flex-rows">
-        <!-- Bio -->
-        <p>
-          I am a full stack web developer based in Adelaide, South Australia. For the past 10 years I have been working as a police officer with the
-          South Australia Police. I am currently a prosecutor at the rank of Sergeant, looking to make the move into a career in software engineering.
-        </p>
-        <p>
-          I am currently undertaking a coding boot camp through The University of Adelaide and have a keen interest in full stack web development and
-          cloud computing.
-        </p>
+    <main id="portfolio">
+      <div class="section-grid">
+        <div class="flex">
+          <h2 class="section-header">About Me</h2>
+        </div>
+        <section id="about-me" class="section flex column">
+          <!-- Bio -->
+          <p>
+            I am a full stack web developer based in Adelaide, South Australia. For the past 10 years I have been working as a police officer with the
+            South Australia Police, currently supervising a team of prosecutors.
+          </p>
+          <p>
+            I am undertaking a full stack web development boot camp through The University of Adelaide and have a keen interest in cloud computing. I
+            am passionate about creating software that improves the lives of others, allowing them to spend more time doing the things they want to
+            do.
+          </p>
 
-        <!-- Skill set -->
-        <p>I have skills and experience in the following:</p>
-        <div class="flex width-100">
-          <div class="capability-list">
-            <p class="list-header">Languages</p>
+          <!-- Skill set -->
+          <p id="skills-header">I am experienced in the following:</p>
+          <div class="skills-grid">
+            <p>Languages</p>
             <ul>
+              <li>JavaScript</li>
+              <li>C#</li>
               <li>HTML</li>
               <li>CSS</li>
-              <li>Javascript</li>
-              <li>C#</li>
             </ul>
-          </div>
-          <div class="capability-list">
             <p>Frameworks</p>
             <ul>
               <li>React</li>
               <li>Node.js</li>
               <li>Express</li>
+              <li>Blazor Server</li>
+              <li>Bootstrap</li>
             </ul>
-          </div>
-          <div class="capability-list">
             <p>Other technologies</p>
             <ul>
               <li>MongoDB</li>
-              <li>SQL</li>
+              <li>MySQL</li>
               <li>Git</li>
-              <li>Microsoft Azure</li>
             </ul>
           </div>
-        </div>
+        </section>
       </div>
-    </section>
-
-    <!-- Portfolio section -->
-    <main id="portfolio" class="grid-2-1">
-      <h2>My Work</h2>
-
-      <!-- Portfolio flex container -->
-      <div id="portfolio-container">
-        <!-- Feature project - Roster -->
-        <section class="card feature">
-          <!-- Makes entire flex item a hyperlink and links image -->
-          <a id="feature" href="https://craigrobertsdev.github.io/flightdex/" target="_blank">
-            <img src="./assets/images/flightdex.jpg" alt="FlightDex - a domestic Australia flight, hotel and event booking page." />
-            <h3>FlightDex</h3>
-            <!-- Project name and description are overlaid on the photo -->
-            <div class="description">
-              <p>An Australian domestic flight scanner that allows the user to book accommodation and events at their destination.</p>
-              <div>
-                <p>Tech stack</p>
-                <ul class="tech-stack">
-                  <li>jQuery</li>
-                  <li>Bulma</li>
-                  <li>Third-party APIs</li>
-                </ul>
-              </div>
+      <div class="section-grid">
+        <div class="flex">
+          <h2 class="section-header">Projects</h2>
+        </div>
+        <section id="projects">
+          <div class="project">
+            <!-- <img src="assets/images/flightdex.jpg" /> -->
+            <div class="project-header"></div>
+            <div class="project-card">
+              <img src="" alt="" class="project-image">
+              <div class="project-description"></div>
             </div>
-          </a>
-        </section>
-
-        <!-- Spotify project -->
-        <section class="card">
-          <!-- Makes entire flex item a hyperlink and links image -->
-          <a href="https://github.com/craigrobertsdev/weather-dashboard" target="_blank">
-            <img src="./assets/images/weather-dashboard.jpg" alt="Weather Dashboard" />
-
-            <!-- Project name and description are overlaid on the photo -->
-            <h3>Weather Dashboard</h3>
-            <div class="description">
-              <p>Search for your location and be presented with a 5 day weather forecast.</p>
-              <p>Tech stack</p>
-              <ul class="tech-stack">
-                <li>Open Weather API</li>
-                <li>JQuery</li>
-              </ul>
-            </div>
-          </a>
-        </section>
-
-        <!-- Workout planner project -->
-        <section class="card">
-          <!-- Makes entire flex item a hyperlink and links image -->
-
-          <a href="https://github.com/craigrobertsdev/workout-planner" target="_blank"
-            ><img src="./assets/images/workout.jpg" alt="Weight room" />
-
-            <!-- Project name and description are overlaid on the photo -->
-            <h3>Workout Planner</h3>
-            <div class="description">
-              <p>Create your own workout plan or use templates that cover 3-6 day per week training plans.</p>
-              <p>Tech stack</p>
-              <ul class="tech-stack">
-                <li>React</li>
-                <li>MySQL</li>
-                <li>Express</li>
-                <li>Node</li>
-                <li>Tailwind CSS</li>
-              </ul>
-            </div>
-          </a>
+          </div>
         </section>
       </div>
     </main>
-  </body>
+    <footer></footer>
 
-  <!-- Footer section to include methods of contacting me -->
-  <footer id="contact" class="grid-2-1">
-    <h2>Contact</h2>
-    <ul class="flex">
-      <li><a href="mailto:craig.roberts11@outlook.com">craig.roberts11@outlook.com</a></li>
-      <li>(+61) 407 226 002</li>
-      <li>
-        <div class="image-container">
-          <a href="https://github.com/craigrobertsdev" target="_blank"><img src="./assets/images/github-mark.png" /></a>
-        </div>
-      </li>
-      <li>
-        <div class="image-container">
-          <a href="https://www.linkedin.com/in/craig-roberts-9ba409243/" target="_blank"><img src="./assets/images/LI-In-Bug.png" /></a>
-        </div>
-      </li>
-    </ul>
-  </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+      integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo="
+      crossorigin="anonymous"></script>
+  </body>
 </html>
