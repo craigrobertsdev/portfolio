@@ -11,7 +11,7 @@
   </head>
   <body>
     <img src="./assets/images/background.jpg" id="background-image" />
-    <header class="grid-3-2">
+    <header id="header" class="grid-3-2">
       <!-- Profile picutre -->
       <figure id="profile-photo">
         <img src="./assets/images/photo.png" />
@@ -24,15 +24,20 @@
       <!-- Nav bar  -->
       <nav>
         <ul>
-          <li><a href="#about-me">About Me</a></li>
-          <li><a href="#portfolio">My Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li>
+          <li class="flex"><a href="#about-me">About Me</a></li>
+          <li class="flex"><a href="#portfolio">Projects</a></li>
+          <li class="flex">
             <a href="./resume.html" target="_blank">Resume</a>
           </li>
+          <li class="flex"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
+    <section id="button-row" class="flex">
+      <button>Projects</button>
+      <button>Contact</button>
+      <button>Resume</button>
+    </section>
     <main id="portfolio">
       <div class="section-grid">
         <div class="flex">
@@ -73,6 +78,7 @@
               <li>MongoDB</li>
               <li>MySQL</li>
               <li>Git</li>
+              <li>Jest</li>
             </ul>
           </div>
         </section>
@@ -81,20 +87,50 @@
         <div class="flex">
           <h2 class="section-header">Projects</h2>
         </div>
-        <section id="projects">
+        <section id="projects" class="section flex column">
           <div class="project">
             <!-- <img src="assets/images/flightdex.jpg" /> -->
             <div class="project-header"></div>
             <div class="project-card">
-              <img src="" alt="" class="project-image">
-              <div class="project-description"></div>
+              <img
+                src="./assets/images/flightdex.jpg"
+                alt="FlightDex - a domestic flight, accommodation and event search engine"
+                class="project-image" />
+              <div class="project-description">
+                <p>
+                  FlightDex is a domestic flight search engine. Users can enter their start locations, date of travel, whether it's a return or one
+                  way trip
+                </p>
+              </div>
             </div>
           </div>
         </section>
       </div>
     </main>
-    <footer></footer>
-
+    <footer id="contact">
+      <div class="section-grid">
+        <div class="flex">
+          <h2 class="section-header">Contact</h2>
+        </div>
+        <ul class="flex">
+          <li><a href="mailto:craig.roberts11@outlook.com">craig.roberts11@outlook.com</a></li>
+          <li>(+61) 407 226 002</li>
+          <li>
+            <div class="image-container">
+              <a href="https://github.com/craigrobertsdev" target="_blank"><img src="./assets/images/github-mark.png" /></a>
+            </div>
+          </li>
+          <li>
+            <div class="image-container">
+              <a href="https://www.linkedin.com/in/craig-roberts-9ba409243/" target="_blank"><img src="./assets/images/LI-In-Bug.png" /></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+    <!-- Ion icons CDN -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
       integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo="
