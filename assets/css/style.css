@@ -4,6 +4,7 @@
 :root {
   --background-blue: #cddce4;
   --text-color: #ddd;
+  --light-grey: #bbb;
   --dark-green: #61892f;
   --green: #8fd42e;
   --black-grey: #222629;
@@ -20,7 +21,7 @@ html {
   background: var(--black-grey);
   color: var(--text-color);
   font-size: 16px;
-  padding: 20px;
+  padding-left: 20px;
 }
 
 #background-image {
@@ -37,31 +38,73 @@ html {
   opacity: 1;
 }
 
+/* Position indicator on left side of screen for larger screen sizes */
+#position-indicator {
+  position: fixed;
+  top: 1rem;
+  left: 1.5rem;
+  height: calc(100% - 2rem);
+  width: 1px;
+  background-color: white;
+  z-index: 1;
+}
+
+/* container for all links */
+#position-indicator > div {
+  position: relative;
+}
+
+/* each individual section */
+#position-indicator > div div {
+  position: absolute;
+  left: 0.4rem;
+  cursor: pointer;
+}
+
+#position-indicator > div div a {
+  color: var(--dark-green);
+  transition: color 0.2s;
+}
+
+#position-indicator > div div a:hover {
+  color: var(--green);
+}
+
 a {
   text-decoration: none;
   color: var(--text-color);
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #fff;
 }
 
 p {
   font-size: 1.1rem;
 }
 
-/* Used for header layout */
-.grid-3-2 {
+/* Used for landing page layout */
+#header-grid {
   display: grid;
-  grid-template-columns: 1fr 3fr auto;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 5fr;
+}
+
+#header-grid > div {
+  position: relative;
 }
 
 #profile-photo {
   grid-row: 1/-1;
-  margin-left: 30px;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 #profile-photo img {
   height: 250px;
   width: 250px;
   border-radius: 50%;
+  opacity: 0.85;
 }
 
 header {
@@ -71,19 +114,18 @@ header {
 header h1 {
   grid-column: 2/3;
   grid-row: 1/2;
-  font-size: 2.5rem;
-  position: relative;
-  top: 70px;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
   color: var(--text-color);
 }
 
 header h2 {
-  position: relative;
   grid-row: 2/3;
-  font-size: 1.3rem;
-  top: 20px;
+  font-size: 2rem;
+  text-align: center;
   opacity: 0.9;
-  color: var(--text-color);
+  color: var(--green);
 }
 
 /* Put nav bar to top right of screen on larger screen sizes */
@@ -91,6 +133,11 @@ nav {
   grid-column: 3/4;
   grid-row: 1/2;
   padding: 10px;
+  visibility: hidden;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1;
 }
 
 nav ul {
@@ -102,7 +149,13 @@ nav ul {
 
 .flex {
   display: flex;
-  /* align-items: center; */
+}
+
+.items-center {
+  align-items: center;
+}
+
+.content-center {
   justify-content: center;
 }
 
@@ -126,16 +179,28 @@ nav ul li a:hover {
 
 /* Row of buttons to different parts of portfolio */
 #button-row {
-  column-gap: 1rem;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin-top: 2rem;
+  column-gap: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 button {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--green);
   padding: 5px;
   background: var(--dark-grey);
-  border: none;
+  border: 1px solid var(--grey);
   border-radius: 7px;
+  cursor: pointer;
+  transition: text-shadow, box-shadow 0.2s;
+}
+
+button:hover {
+  text-shadow: 0.5px 0.5px 0.5px var(--dark-green);
+  box-shadow: inset 0 0 20px #6b6e7055;
 }
 
 /* About me and projects container */
@@ -233,7 +298,7 @@ footer h2 {
 footer ul {
   /* margin-right: 15%; */
   font-size: 1.2rem;
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: 10%;
   align-items: center;
 }

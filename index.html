@@ -11,36 +11,49 @@
   </head>
   <body>
     <img src="./assets/images/background.jpg" id="background-image" />
-    <header id="header" class="grid-3-2">
-      <!-- Profile picutre -->
-      <figure id="profile-photo">
-        <img src="./assets/images/photo.png" />
-      </figure>
-
-      <!-- Header and title -->
-      <h1>Craig Roberts</h1>
-      <h2>Full Stack Web Developer</h2>
-
+    <div id="position-indicator">
+      <div>
+        <div id="home-indicator"><a>Home</a></div>
+        <div id="about-me-indicator"><a>About Me</a></div>
+        <div id="project-indicator"><a>Projects</a></div>
+        <div id="contact-indicator"><a>Contact</a></div>
+      </div>
+    </div>
+    <header id="header">
       <!-- Nav bar  -->
       <nav>
         <ul>
           <li class="flex"><a href="#about-me">About Me</a></li>
           <li class="flex"><a href="#portfolio">Projects</a></li>
+          <li class="flex"><a href="#contact">Contact</a></li>
           <li class="flex">
             <a href="./resume.html" target="_blank">Resume</a>
           </li>
-          <li class="flex"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
+      <div id="header-grid">
+        <div>
+          <!-- Profile picutre -->
+          <figure id="profile-photo" class="flex content-center">
+            <img src="./assets/images/photo.png" />
+          </figure>
+
+          <!-- Header and title -->
+          <h1>Craig Roberts</h1>
+          <h2>Full Stack Web Developer</h2>
+        </div>
+        <div id="button-row">
+          <button id="about-me-btn">About Me</button>
+          <button id="projects-btn">Projects</button>
+          <button id="contact-btn">Contact</button>
+          <button id="resume-btn">Resume</button>
+        </div>
+      </div>
     </header>
-    <section id="button-row" class="flex">
-      <button>Projects</button>
-      <button>Contact</button>
-      <button>Resume</button>
-    </section>
     <main id="portfolio">
       <div class="section-grid">
-        <div class="flex">
+        <div class="flex content-center">
           <h2 class="section-header">About Me</h2>
         </div>
         <section id="about-me" class="section flex column">
@@ -84,7 +97,7 @@
         </section>
       </div>
       <div class="section-grid">
-        <div class="flex">
+        <div class="flex content-center">
           <h2 class="section-header">Projects</h2>
         </div>
         <section id="projects" class="section flex column">
@@ -109,7 +122,7 @@
     </main>
     <footer id="contact">
       <div class="section-grid">
-        <div class="flex">
+        <div class="flex content-center items-center">
           <h2 class="section-header">Contact</h2>
         </div>
         <ul class="flex">
@@ -117,7 +130,7 @@
           <li>(+61) 407 226 002</li>
           <li>
             <div class="image-container">
-              <a href="https://github.com/craigrobertsdev" target="_blank"><img src="./assets/images/github-mark.png" /></a>
+              <a href="https://github.com/craigrobertsdev" target="_blank"><img src="./assets/images/github.svg" /></a>
             </div>
           </li>
           <li>
@@ -128,12 +141,12 @@
         </ul>
       </div>
     </footer>
-    <script src="./assets/js/script.js"></script>
-    <!-- Ion icons CDN -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
       integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo="
       crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+    <!-- Ion icons CDN -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </body>
 </html>
