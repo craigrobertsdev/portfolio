@@ -14,44 +14,96 @@ const homeIndicator = document.getElementById("home-indicator");
 const aboutMeIndicator = document.getElementById("about-me-indicator");
 const projectsIndicator = document.getElementById("project-indicator");
 const contactIndicator = document.getElementById("contact-indicator");
+const positionIndicatorBlock = document.getElementById("position-indicator-block");
+
+let currentIndicator = homeIndicator;
 
 const rem = parseInt(window.getComputedStyle(htmlElement).getPropertyValue("font-size"), 10);
-console.log(rem);
 // setting padding for html element
 htmlElement.style.padding = "20px";
 
 // setting size of landing screen based on client screen size
 let viewportHeight = window.innerHeight;
-const htmlPadding = parseInt(htmlElement.style.padding.substring(0, htmlElement.style.padding.length - 2));
+const htmlPadding = pxToNumber(htmlElement.style.padding);
 headerSection.style.height = viewportHeight - htmlPadding + "px";
-
-// set height for landing page grid
-headerGrid.style.height = header.offsetHeight - navbarElement.offsetHeight - htmlPadding + "px";
-
-// set height to minimum of full page for each section
-// aboutMeSection.style.minHeight = viewportHeight + "px";
-projectsSection.style.minHeight = viewportHeight + "px";
-
-// make navbar visible when navigation buttons are out of view
-// const buttonY = resumeButton.getBoundingClientRect().y;
-// document.addEventListener("scroll", (e) => {
-//   if (scrollY > buttonY) {
-//     navbarElement.style.visibility = "visible";
-//   } else {
-//     navbarElement.style.visibility = "hidden";
-//   }
-// });
 
 // event listeners for page navigation
 homeIndicator.children[0].addEventListener("click", () => {
   window.scrollTo(0, 0);
 });
+
 aboutMeButton.addEventListener("click", scrollToAboutMe);
 aboutMeIndicator.addEventListener("click", scrollToAboutMe);
+
 projectsButton.addEventListener("click", scrollToProjects);
 projectsIndicator.addEventListener("click", scrollToProjects);
+
 contactButton.addEventListener("click", scrollToContact);
+contactIndicator.addEventListener("click", scrollToContact);
+
 resumeButton.addEventListener("click", openResume);
+
+// position indicator logic
+// new plan is to make each section an even height and look a lot like the template image.
+// will need to use pseudo-elements (i think) for each div and move it to the left by 1rem.
+// to get the section name in the middle of the line, will need to move it up by 50% of its height
+// how do i draw a line in the way that is shown in the image with the white dots as markers for each new section?
+homeIndicator.style.height = calculatePositionIndicatorHeight(headerSection);
+
+aboutMeIndicator.style.top = calculatePositionIndicatorY(aboutMeSection);
+aboutMeIndicator.style.height = calculatePositionIndicatorHeight(aboutMeSection);
+
+projectsIndicator.style.top = calculatePositionIndicatorY(projectsSection);
+projectsIndicator.style.height = calculatePositionIndicatorHeight(projectsSection);
+
+contactIndicator.style.top = positionIndicatorBar.offsetHeight - htmlPadding + "px";
+contactIndicator.style.height = calculatePositionIndicatorHeight(contactSection);
+
+document.addEventListener("scroll", () => {
+  // determines the relative position of the user's scroll on the page by calculating:
+  // the current scroll position divided by the total height of the page less the height of the client's screen, then working that factor out relative to the scroll bar.
+  blockPosition = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * positionIndicatorBar.offsetHeight;
+  positionIndicatorBlock.style.top = blockPosition + "px";
+
+  const newIndicator = checkBlockLocation(blockPosition);
+  if (currentIndicator !== newIndicator) {
+    currentIndicator.classList.remove("current-indicator");
+    newIndicator.classList.add("current-indicator");
+    currentIndicator = newIndicator;
+  }
+});
+
+//Helper methods
+function pxToNumber(value) {
+  return parseInt(value.substring(0, value.length - 2));
+}
+
+function calculatePositionIndicatorY(element) {
+  const pageHeight = document.documentElement.scrollHeight;
+  const elementHeight = element.offsetTop;
+  const relativePos = (elementHeight / pageHeight) * positionIndicatorBar.offsetHeight;
+
+  return relativePos - 2 * rem + "px";
+}
+
+function calculatePositionIndicatorHeight(element) {
+  const relativeHeight = (element.offsetHeight / document.documentElement.scrollHeight) * positionIndicatorBar.offsetHeight;
+
+  return relativeHeight + "px";
+}
+
+// called when scrolling to determine which positionBarIndicator section needs to be emphasised
+function checkBlockLocation(position) {
+  if (position < pxToNumber(aboutMeIndicator.style.top)) {
+    return homeIndicator;
+  } else if (position < pxToNumber(projectsIndicator.style.top)) {
+    return aboutMeIndicator;
+  } else if (position < pxToNumber(contactIndicator.style.top)) {
+    return projectsIndicator;
+  } else {
+    return contactIndicator;
+  }
+}
 
 function scrollToAboutMe() {
   aboutMeSection.scrollIntoView({ block: "start", behavior: "smooth" });
@@ -67,18 +119,4 @@ function scrollToContact() {
 
 function openResume() {
   window.location.assign("./resume.html");
-}
-
-// position indicator logic
-aboutMeIndicator.style.top = calculatePositionIndicatorY(aboutMeSection) - 5 * rem + "px";
-projectsIndicator.style.top = calculatePositionIndicatorY(projectsSection) - 5 * rem + "px";
-contactIndicator.style.top = positionIndicatorBar.offsetHeight - htmlPadding + "px";
-
-function calculatePositionIndicatorY(element) {
-  const pageHeight = document.documentElement.scrollHeight;
-  console.log("page height " + pageHeight);
-  const elementHeight = element.offsetHeight;
-  console.log("elementHeight " + elementHeight);
-
-  return (elementHeight / pageHeight) * positionIndicatorBar.offsetHeight;
 }

@@ -11,6 +11,8 @@
   </head>
   <body>
     <img src="./assets/images/background.jpg" id="background-image" />
+
+    <!-- Navbar  -->
     <div id="position-indicator">
       <div>
         <div id="home-indicator"><a>Home</a></div>
@@ -18,10 +20,11 @@
         <div id="project-indicator"><a>Projects</a></div>
         <div id="contact-indicator"><a>Contact</a></div>
       </div>
+      <div id="position-indicator-block"></div>
     </div>
     <header id="header">
-      <!-- Nav bar  -->
-      <nav>
+      <!-- Navbar  -->
+      <!-- <nav>
         <ul>
           <li class="flex"><a href="#about-me">About Me</a></li>
           <li class="flex"><a href="#portfolio">Projects</a></li>
@@ -30,19 +33,12 @@
             <a href="./resume.html" target="_blank">Resume</a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
 
-      <div id="header-grid">
-        <div>
-          <!-- Profile picutre -->
-          <figure id="profile-photo" class="flex content-center">
-            <img src="./assets/images/photo.png" />
-          </figure>
-
-          <!-- Header and title -->
-          <h1>Craig Roberts</h1>
-          <h2>Full Stack Web Developer</h2>
-        </div>
+      <div id="landing-page" class="flex column content-center items-center">
+        <!-- Header and title -->
+        <h1>Craig Roberts</h1>
+        <h2>Full Stack Web Developer</h2>
         <div id="button-row">
           <button id="about-me-btn">About Me</button>
           <button id="projects-btn">Projects</button>
@@ -52,11 +48,15 @@
       </div>
     </header>
     <main id="portfolio">
-      <div class="section-grid">
+      <div class="portfolio-section">
         <div class="flex content-center">
           <h2 class="section-header">About Me</h2>
         </div>
         <section id="about-me" class="section flex column">
+          <!-- Profile picutre -->
+          <!-- <figure id="profile-photo" class="float-left">
+            <img src="./assets/images/photo.png" />
+          </figure> -->
           <!-- Bio -->
           <p>
             I am a full stack web developer based in Adelaide, South Australia. For the past 10 years I have been working as a police officer with the
@@ -96,14 +96,14 @@
           </div>
         </section>
       </div>
-      <div class="section-grid">
+      <div class="portfolio-section">
         <div class="flex content-center">
           <h2 class="section-header">Projects</h2>
         </div>
         <section id="projects" class="section flex column">
-          <div class="project">
-            <!-- <img src="assets/images/flightdex.jpg" /> -->
-            <div class="project-header"></div>
+          <!-- Project 1 -->
+          <div class="project-container">
+            <h3 class="project-header">FlightDex</h3>
             <div class="project-card">
               <img
                 src="./assets/images/flightdex.jpg"
@@ -112,8 +112,78 @@
               <div class="project-description">
                 <p>
                   FlightDex is a domestic flight search engine. Users can enter their start locations, date of travel, whether it's a return or one
-                  way trip
+                  way trip and be presented with a list of flights to match. Once flights are selected, the user will be presented with the options to
+                  select accommodation for up to 4 passengers and events that will be on during their stay.<br /><br />This project was created using
+                  only front end technologies and uses fetch to get data from multiple third-party APIs.
                 </p>
+                <ul class="technologies flex gap-1">
+                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bulma/bulma-plain.svg" alt="Bulma" /></li>
+                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /></li>
+                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" /></li>
+                </ul>
+                <h4>Check it out:</h4>
+                <ul class="flex content-center gap-1 button-list">
+                  <li><a href="https://github.com/craigrobertsdev/flightdex" target="_blank">GitHub</a></li>
+                  <li><a href="https://craigrobertsdev.github.io/flightdex/" target="_blank">Deployed App</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-container">
+            <h3 class="project-header">FlightDex</h3>
+            <div class="project-card">
+              <div class="project-description">
+                <p>
+                  FlightDex is a domestic flight search engine. Users can enter their start locations, date of travel, whether it's a return or one
+                  way trip and be presented with a list of flights to match. Once flights are selected, the user will be presented with the options to
+                  select accommodation for up to 4 passengers and events that will be on during their stay.<br /><br />This project was created using
+                  only front end technologies and uses fetch to get data from multiple third-party APIs.
+                </p>
+                <ul class="technologies flex gap-1">
+                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bulma/bulma-plain.svg" alt="Bulma" /></li>
+                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /></li>
+                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" /></li>
+                </ul>
+                <h4>Check it out:</h4>
+                <ul class="flex content-center gap-1 button-list">
+                  <li><a href="https://github.com/craigrobertsdev/flightdex" target="_blank">GitHub</a></li>
+                  <li><a href="https://craigrobertsdev.github.io/flightdex/" target="_blank">Deployed App</a></li>
+                </ul>
+              </div>
+              <img
+                src="./assets/images/flightdex.jpg"
+                alt="FlightDex - a domestic flight, accommodation and event search engine"
+                class="project-image" />
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-container">
+            <h3 class="project-header">FlightDex</h3>
+            <div class="project-card">
+              <img
+                src="./assets/images/flightdex.jpg"
+                alt="FlightDex - a domestic flight, accommodation and event search engine"
+                class="project-image" />
+              <div class="project-description">
+                <p>
+                  FlightDex is a domestic flight search engine. Users can enter their start locations, date of travel, whether it's a return or one
+                  way trip and be presented with a list of flights to match. Once flights are selected, the user will be presented with the options to
+                  select accommodation for up to 4 passengers and events that will be on during their stay.<br /><br />This project was created using
+                  only front end technologies and uses fetch to get data from multiple third-party APIs.
+                </p>
+                <ul class="technologies flex gap-1">
+                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bulma/bulma-plain.svg" alt="Bulma" /></li>
+                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /></li>
+                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" /></li>
+                </ul>
+                <h4>Check it out:</h4>
+                <ul class="flex content-center gap-1 button-list">
+                  <li><a href="https://github.com/craigrobertsdev/flightdex" target="_blank">GitHub</a></li>
+                  <li><a href="https://craigrobertsdev.github.io/flightdex/" target="_blank">Deployed App</a></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -121,7 +191,7 @@
       </div>
     </main>
     <footer id="contact">
-      <div class="section-grid">
+      <div class="portfolio-section">
         <div class="flex content-center items-center">
           <h2 class="section-header">Contact</h2>
         </div>
@@ -130,21 +200,19 @@
           <li>(+61) 407 226 002</li>
           <li>
             <div class="image-container">
-              <a href="https://github.com/craigrobertsdev" target="_blank"><img src="./assets/images/github.svg" /></a>
+              <a href="https://github.com/craigrobertsdev" target="_blank"><img src="./assets/images/github.svg" alt="GitHub Icon" /></a>
             </div>
           </li>
           <li>
             <div class="image-container">
-              <a href="https://www.linkedin.com/in/craig-roberts-9ba409243/" target="_blank"><img src="./assets/images/LI-In-Bug.png" /></a>
+              <a href="https://www.linkedin.com/in/craig-roberts-9ba409243/" target="_blank"
+                ><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn Icon" />
+              </a>
             </div>
           </li>
         </ul>
       </div>
     </footer>
-    <script
-      src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
-      integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo="
-      crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
     <!-- Ion icons CDN -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
