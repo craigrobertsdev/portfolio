@@ -18,7 +18,7 @@
         <div id="home-indicator"><a>Home</a></div>
         <div id="about-me-indicator"><a>About Me</a></div>
         <div id="project-indicator"><a>Projects</a></div>
-        <div id="contact-indicator"><a>Contact</a></div>
+        <div id="contact-indicator"><a>Contact Me</a></div>
       </div>
       <div id="position-indicator-block"></div>
     </div>
@@ -39,11 +39,11 @@
         <!-- Header and title -->
         <h1>Craig Roberts</h1>
         <h2>Full Stack Web Developer</h2>
-        <div id="button-row">
-          <button id="about-me-btn">About Me</button>
-          <button id="projects-btn">Projects</button>
-          <button id="contact-btn">Contact</button>
-          <button id="resume-btn">Resume</button>
+        <div class="button-row">
+          <a id="about-me-btn">About Me</a>
+          <a id="projects-btn">Projects</a>
+          <a id="contact-btn">Contact</a>
+          <a id="resume-btn">Resume</a>
         </div>
       </div>
     </header>
@@ -54,45 +54,47 @@
         </div>
         <section id="about-me" class="section flex column">
           <!-- Profile picutre -->
-          <!-- <figure id="profile-photo" class="float-left">
+          <figure id="profile-photo">
             <img src="./assets/images/photo.png" />
-          </figure> -->
+          </figure>
           <!-- Bio -->
-          <p>
-            I am a full stack web developer based in Adelaide, South Australia. For the past 10 years I have been working as a police officer with the
-            South Australia Police, currently supervising a team of prosecutors.
-          </p>
-          <p>
-            I am undertaking a full stack web development boot camp through The University of Adelaide and have a keen interest in cloud computing. I
-            am passionate about creating software that improves the lives of others, allowing them to spend more time doing the things they want to
-            do.
-          </p>
+          <div id="about-me-container">
+            <p>
+              I am a full stack web developer based in Adelaide, South Australia. For the past 10 years I have been working as a police officer with
+              the South Australia Police, currently supervising a team of prosecutors.
+            </p>
+            <p>
+              I am undertaking a full stack web development boot camp through The University of Adelaide and have a keen interest in cloud computing.
+              I am passionate about creating software that improves the lives of others, allowing them to spend more time doing the things they want
+              to do.
+            </p>
 
-          <!-- Skill set -->
-          <p id="skills-header">I am experienced in the following:</p>
-          <div class="skills-grid">
-            <p>Languages</p>
-            <ul>
-              <li>JavaScript</li>
-              <li>C#</li>
-              <li>HTML</li>
-              <li>CSS</li>
-            </ul>
-            <p>Frameworks</p>
-            <ul>
-              <li>React</li>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>Blazor Server</li>
-              <li>Bootstrap</li>
-            </ul>
-            <p>Other technologies</p>
-            <ul>
-              <li>MongoDB</li>
-              <li>MySQL</li>
-              <li>Git</li>
-              <li>Jest</li>
-            </ul>
+            <!-- Skill set -->
+            <p id="skills-header">I am experienced in the following:</p>
+            <div class="skills-grid">
+              <p>Languages</p>
+              <ul>
+                <li>JavaScript</li>
+                <li>C#</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+              <p>Frameworks</p>
+              <ul>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>Blazor Server</li>
+                <li>Bootstrap</li>
+              </ul>
+              <p>Other technologies</p>
+              <ul>
+                <li>MongoDB</li>
+                <li>MySQL</li>
+                <li>Git</li>
+                <li>Jest</li>
+              </ul>
+            </div>
           </div>
         </section>
       </div>
@@ -122,7 +124,7 @@
                   <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" /></li>
                 </ul>
                 <h4>Check it out:</h4>
-                <ul class="flex content-center gap-1 button-list">
+                <ul class="flex content-center gap-1 button-row">
                   <li><a href="https://github.com/craigrobertsdev/flightdex" target="_blank">GitHub</a></li>
                   <li><a href="https://craigrobertsdev.github.io/flightdex/" target="_blank">Deployed App</a></li>
                 </ul>
@@ -132,28 +134,29 @@
 
           <!-- Project 2 -->
           <div class="project-container">
-            <h3 class="project-header">FlightDex</h3>
+            <h3 class="project-header">Team Profile Generator</h3>
             <div class="project-card">
               <div class="project-description">
                 <p>
-                  FlightDex is a domestic flight search engine. Users can enter their start locations, date of travel, whether it's a return or one
-                  way trip and be presented with a list of flights to match. Once flights are selected, the user will be presented with the options to
-                  select accommodation for up to 4 passengers and events that will be on during their stay.<br /><br />This project was created using
-                  only front end technologies and uses fetch to get data from multiple third-party APIs.
+                  This application generates a team roster by prompting the user to enter information about the team manager, then any number of
+                  engineers and interns along with information about them.<br /><br />
+                  This application uses Node.js and the inquirer module to handle prompting the user from the command-line, then generates an HTML
+                  document which uses Bootstrap for the UI, based on what the user entered.
                 </p>
                 <ul class="technologies flex gap-1">
-                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bulma/bulma-plain.svg" alt="Bulma" /></li>
-                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" /></li>
-                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" /></li>
+                  <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js icon" /></li>
+                  <li>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap icon" />
+                  </li>
                 </ul>
                 <h4>Check it out:</h4>
-                <ul class="flex content-center gap-1 button-list">
-                  <li><a href="https://github.com/craigrobertsdev/flightdex" target="_blank">GitHub</a></li>
-                  <li><a href="https://craigrobertsdev.github.io/flightdex/" target="_blank">Deployed App</a></li>
+                <ul class="flex content-center gap-1 button-row">
+                  <li><a href="https://github.com/craigrobertsdev/Team-Profile-Generator" target="_blank">GitHub</a></li>
+                  <!-- <li><a href="https://craigrobertsdev.github.io/flightdex/" target="_blank">Deployed App</a></li> -->
                 </ul>
               </div>
               <img
-                src="./assets/images/flightdex.jpg"
+                src="./assets/images/profile-generator.jpg"
                 alt="FlightDex - a domestic flight, accommodation and event search engine"
                 class="project-image" />
             </div>
@@ -180,7 +183,7 @@
                   <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg" alt="jQuery" /></li>
                 </ul>
                 <h4>Check it out:</h4>
-                <ul class="flex content-center gap-1 button-list">
+                <ul class="flex content-center gap-1 button-row">
                   <li><a href="https://github.com/craigrobertsdev/flightdex" target="_blank">GitHub</a></li>
                   <li><a href="https://craigrobertsdev.github.io/flightdex/" target="_blank">Deployed App</a></li>
                 </ul>
@@ -193,7 +196,7 @@
     <footer id="contact">
       <div class="portfolio-section">
         <div class="flex content-center items-center">
-          <h2 class="section-header">Contact</h2>
+          <h2 class="section-header">Contact Me</h2>
         </div>
         <ul class="flex">
           <li><a href="mailto:craig.roberts11@outlook.com">craig.roberts11@outlook.com</a></li>
