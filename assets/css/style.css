@@ -29,7 +29,7 @@ html {
   top: 0;
   z-index: -1;
   filter: grayscale(100%);
-  opacity: 0.15;
+  opacity: 0.12;
 }
 
 .bg-dark {
@@ -264,25 +264,25 @@ section div p,
 .skills-grid {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  grid-template-rows: auto 1fr;
-  column-gap: 5rem;
+  grid-template-columns: auto 1fr;
 }
 
-.skills-grid p,
 .skills-grid ul {
   text-align: center;
 }
 
 .skills-grid p {
-  grid-row: 1/2;
+  grid-column: 1/2;
+  font-size: 1.4rem;
+  text-decoration: underline;
 }
 
 .skills-grid ul {
-  grid-row: 2/3;
-}
-
-.skills-grid ul li {
-  margin-bottom: 0.3rem;
+  grid-column: 2/3;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Project section */
@@ -323,9 +323,10 @@ div.skills-grid p {
   padding: 0 1rem;
 }
 
+.skills-grid li,
 .technologies li {
-  height: 2rem;
-  width: 2rem;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 h4 {

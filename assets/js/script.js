@@ -32,13 +32,10 @@ homeIndicator.children[0].addEventListener("click", () => {
   window.scrollTo(0, 0);
 });
 
-aboutMeButton.addEventListener("click", scrollToAboutMe);
 aboutMeIndicator.addEventListener("click", scrollToAboutMe);
 
-projectsButton.addEventListener("click", scrollToProjects);
 projectsIndicator.addEventListener("click", scrollToProjects);
 
-contactButton.addEventListener("click", scrollToContact);
 contactIndicator.addEventListener("click", scrollToContact);
 
 resumeButton.addEventListener("click", openResume);
