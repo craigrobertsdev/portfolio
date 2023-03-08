@@ -17,6 +17,7 @@ const currentIndicatorEl = document.getElementById("current-indicator");
 
 const rem = parseInt(window.getComputedStyle(htmlElement).getPropertyValue("font-size"), 10);
 let currentIndicator, currentIndicatorBar;
+let prevScrollY = 0;
 
 // setting padding for html element
 htmlElement.style.padding = "20px";
@@ -27,24 +28,32 @@ const htmlPadding = pxToNumber(htmlElement.style.padding);
 headerSection.style.height = viewportHeight - htmlPadding + "px";
 
 // position indicator logic
-// on scroll, a check needs to be done to determine whether we're in a new section, and if so,
-// that section's indicator becomes the current indicator and we change styles appropriately
-
-// TODO
 document.addEventListener("scroll", () => {
-  if (window.scrollY >= getVerticalOffset(contactSection)) {
-    setCurrentIndicatorStyle(contactIndicator, contactIndicatorBar);
-  } else if (window.scrollY >= projectsSection.getBoundingClientRect().top) {
-    setCurrentIndicatorStyle(projectsIndicator, projectsIndicatorBar);
-  } else if (window.scrollY >= aboutMeSection.getBoundingClientRect().top) {
-    setCurrentIndicatorStyle(aboutMeIndicator, aboutMeIndicatorBar);
+  if (window.scrollY > prevScrollY) {
+    // scrolling downwards
+    if (window.scrollY >= getVerticalOffsetTop(contactSection)) {
+      setCurrentIndicatorStyle(contactIndicator, contactIndicatorBar);
+    } else if (window.scrollY >= getVerticalOffsetTop(projectsSection)) {
+      setCurrentIndicatorStyle(projectsIndicator, projectsIndicatorBar);
+    } else if (window.scrollY >= getVerticalOffsetTop(aboutMeSection)) {
+      setCurrentIndicatorStyle(aboutMeIndicator, aboutMeIndicatorBar);
+    } else {
+      setCurrentIndicatorStyle(homeIndicator, homeIndicatorBar);
+    }
   } else {
-    setCurrentIndicatorStyle(homeIndicator, homeIndicatorBar);
+    // scrolling upwards
+    if (window.scrollY >= getVerticalOffsetBottom(contactSection)) {
+      setCurrentIndicatorStyle(contactIndicator, contactIndicatorBar);
+    } else if (window.scrollY >= getVerticalOffsetBottom(projectsSection)) {
+      setCurrentIndicatorStyle(projectsIndicator, projectsIndicatorBar);
+    } else if (window.scrollY >= getVerticalOffsetBottom(aboutMeSection)) {
+      setCurrentIndicatorStyle(aboutMeIndicator, aboutMeIndicatorBar);
+    } else {
+      setCurrentIndicatorStyle(homeIndicator, homeIndicatorBar);
+    }
   }
 
-  // check whether contact is in view, if so, that is the current element
-  // else check the vertical scroll position and whatever is mostly in view, that is the current index.
-  // modify class list appropriately
+  prevScrollY = window.scrollY;
 });
 
 // apply vertical positions to indicator links
@@ -138,9 +147,16 @@ function openResume() {
   window.location.assign("./resume.html");
 }
 
-function getVerticalOffset(element) {
+// for scrolling down the page
+function getVerticalOffsetTop(element) {
   const rect = element.getBoundingClientRect();
   return rect.top + window.scrollY - window.innerHeight;
+}
+
+// for scrolling up the page
+function getVerticalOffsetBottom(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top + window.scrollY - 0.7 * window.innerHeight;
 }
 
 function init() {
