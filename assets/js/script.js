@@ -1,24 +1,23 @@
 const htmlElement = document.querySelector("html");
 const headerSection = document.querySelector("header");
-const headerGrid = document.getElementById("header-grid");
-const navbarElement = document.querySelector("nav");
 const aboutMeSection = document.getElementById("about-me");
 const projectsSection = document.getElementById("projects");
 const contactSection = document.getElementById("contact");
-const aboutMeButton = document.getElementById("about-me-btn");
-const projectsButton = document.getElementById("projects-btn");
-const contactButton = document.getElementById("contact-btn");
 const resumeButton = document.getElementById("resume-btn");
-const positionIndicatorBar = document.getElementById("position-indicator");
 const homeIndicator = document.getElementById("home-indicator");
 const aboutMeIndicator = document.getElementById("about-me-indicator");
-const projectsIndicator = document.getElementById("project-indicator");
+const projectsIndicator = document.getElementById("projects-indicator");
 const contactIndicator = document.getElementById("contact-indicator");
-const positionIndicatorBlock = document.getElementById("position-indicator-block");
-
-let currentIndicator = homeIndicator;
+const homeIndicatorBar = document.getElementById("home-indicator-bar");
+const aboutMeIndicatorBar = document.getElementById("about-me-indicator-bar");
+const projectsIndicatorBar = document.getElementById("projects-indicator-bar");
+const contactIndicatorBar = document.getElementById("contact-indicator-bar");
+const indicatorContainer = document.getElementById("container");
+const currentIndicatorEl = document.getElementById("current-indicator");
 
 const rem = parseInt(window.getComputedStyle(htmlElement).getPropertyValue("font-size"), 10);
+let currentIndicator, currentIndicatorBar;
+
 // setting padding for html element
 htmlElement.style.padding = "20px";
 
@@ -27,48 +26,82 @@ let viewportHeight = window.innerHeight;
 const htmlPadding = pxToNumber(htmlElement.style.padding);
 headerSection.style.height = viewportHeight - htmlPadding + "px";
 
-// event listeners for page navigation
-homeIndicator.children[0].addEventListener("click", () => {
-  window.scrollTo(0, 0);
-});
-
-aboutMeIndicator.addEventListener("click", scrollToAboutMe);
-
-projectsIndicator.addEventListener("click", scrollToProjects);
-
-contactIndicator.addEventListener("click", scrollToContact);
-
-resumeButton.addEventListener("click", openResume);
-
 // position indicator logic
-// new plan is to make each section an even height and look a lot like the template image.
-// will need to use pseudo-elements (i think) for each div and move it to the left by 1rem.
-// to get the section name in the middle of the line, will need to move it up by 50% of its height
-// how do i draw a line in the way that is shown in the image with the white dots as markers for each new section?
-homeIndicator.style.height = calculatePositionIndicatorHeight(headerSection);
+// on scroll, a check needs to be done to determine whether we're in a new section, and if so,
+// that section's indicator becomes the current indicator and we change styles appropriately
 
-aboutMeIndicator.style.top = calculatePositionIndicatorY(aboutMeSection);
-aboutMeIndicator.style.height = calculatePositionIndicatorHeight(aboutMeSection);
-
-projectsIndicator.style.top = calculatePositionIndicatorY(projectsSection);
-projectsIndicator.style.height = calculatePositionIndicatorHeight(projectsSection);
-
-contactIndicator.style.top = positionIndicatorBar.offsetHeight - htmlPadding + "px";
-contactIndicator.style.height = calculatePositionIndicatorHeight(contactSection);
-
+// TODO
 document.addEventListener("scroll", () => {
-  // determines the relative position of the user's scroll on the page by calculating:
-  // the current scroll position divided by the total height of the page less the height of the client's screen, then working that factor out relative to the scroll bar.
-  blockPosition = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * positionIndicatorBar.offsetHeight;
-  positionIndicatorBlock.style.top = blockPosition + "px";
-
-  const newIndicator = checkBlockLocation(blockPosition);
-  if (currentIndicator !== newIndicator) {
-    currentIndicator.classList.remove("current-indicator");
-    newIndicator.classList.add("current-indicator");
-    currentIndicator = newIndicator;
+  if (window.scrollY >= getVerticalOffset(contactSection)) {
+    setCurrentIndicatorStyle(contactIndicator, contactIndicatorBar);
+  } else if (window.scrollY >= projectsSection.getBoundingClientRect().top) {
+    setCurrentIndicatorStyle(projectsIndicator, projectsIndicatorBar);
+  } else if (window.scrollY >= aboutMeSection.getBoundingClientRect().top) {
+    setCurrentIndicatorStyle(aboutMeIndicator, aboutMeIndicatorBar);
+  } else {
+    setCurrentIndicatorStyle(homeIndicator, homeIndicatorBar);
   }
+
+  // check whether contact is in view, if so, that is the current element
+  // else check the vertical scroll position and whatever is mostly in view, that is the current index.
+  // modify class list appropriately
 });
+
+// apply vertical positions to indicator links
+let containerHeight = container.offsetHeight;
+const indicatorStyles = {
+  homeIndicator: {
+    top: 0,
+  },
+  aboutMeIndicator: {
+    top: containerHeight / 4 + "px",
+  },
+  projectsIndicator: {
+    top: containerHeight / 2 + "px",
+  },
+  contactIndicator: {
+    top: containerHeight - containerHeight / 4 + "px",
+  },
+};
+
+const indicatorBarStyles = {
+  homeIndicatorBar: {
+    top: "2px",
+  },
+  aboutMeIndicatorBar: {
+    top: containerHeight / 4 + 2 + "px",
+  },
+  projectsIndicatorBar: {
+    top: containerHeight / 2 + 2 + "px",
+  },
+  contactIndicatorBar: {
+    top: containerHeight - containerHeight / 4 + 2 + "px",
+  },
+};
+// set vertical positions for the position indicators and bars
+homeIndicator.style.top = indicatorStyles.homeIndicator.top;
+aboutMeIndicator.style.top = indicatorStyles.aboutMeIndicator.top;
+projectsIndicator.style.top = indicatorStyles.projectsIndicator.top;
+contactIndicator.style.top = indicatorStyles.contactIndicator.top;
+
+homeIndicatorBar.style.top = indicatorBarStyles.homeIndicatorBar.top;
+aboutMeIndicatorBar.style.top = indicatorBarStyles.aboutMeIndicatorBar.top;
+projectsIndicatorBar.style.top = indicatorBarStyles.projectsIndicatorBar.top;
+contactIndicatorBar.style.top = indicatorBarStyles.contactIndicatorBar.top;
+
+currentIndicatorEl.style.top = "1px";
+
+// on scroll, changes the current section to indicate position in document
+function setCurrentIndicatorStyle(newIndicator, newIndicatorBar) {
+  currentIndicator.children[0].classList.remove("current-indicator");
+  currentIndicatorBar.classList.remove("current-indicator-bar");
+
+  newIndicator.children[0].classList.add("current-indicator");
+  newIndicatorBar.classList.add("current-indicator-bar");
+
+  currentIndicator = newIndicator;
+  currentIndicatorBar = newIndicatorBar;
+}
 
 //Helper methods
 function pxToNumber(value) {
@@ -89,19 +122,6 @@ function calculatePositionIndicatorHeight(element) {
   return relativeHeight + "px";
 }
 
-// called when scrolling to determine which positionBarIndicator section needs to be emphasised
-function checkBlockLocation(position) {
-  if (position < pxToNumber(aboutMeIndicator.style.top)) {
-    return homeIndicator;
-  } else if (position < pxToNumber(projectsIndicator.style.top)) {
-    return aboutMeIndicator;
-  } else if (position < pxToNumber(contactIndicator.style.top)) {
-    return projectsIndicator;
-  } else {
-    return contactIndicator;
-  }
-}
-
 function scrollToAboutMe() {
   aboutMeSection.scrollIntoView({ block: "start", behavior: "smooth" });
 }
@@ -117,3 +137,17 @@ function scrollToContact() {
 function openResume() {
   window.location.assign("./resume.html");
 }
+
+function getVerticalOffset(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top + window.scrollY - window.innerHeight;
+}
+
+function init() {
+  currentIndicator = homeIndicator;
+  currentIndicatorBar = homeIndicatorBar;
+  homeIndicator.children[0].classList.add("current-indicator");
+  homeIndicatorBar.classList.add("current-indicator-bar");
+}
+
+init();

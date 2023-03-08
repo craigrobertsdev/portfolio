@@ -11,6 +11,7 @@
   --dark-grey: #474b4f;
   --grey: #6b6e70;
   --text-color-hover: #adabab;
+  --grey-hover: #777777;
 }
 
 * {
@@ -21,6 +22,7 @@ html {
   background: var(--black-grey);
   color: var(--text-color);
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 #background-image {
@@ -39,46 +41,120 @@ html {
 
 /* Position indicator on left side of screen for larger screen sizes */
 #position-indicator {
+  font-size: 12px;
   position: fixed;
-  top: 1rem;
-  left: 1.5rem;
-  height: calc(100% - 2rem);
-  width: 1px;
-  background-color: white;
+  top: 15%;
+  left: 0;
+  width: 8rem;
+  height: 70%;
   z-index: 1;
 }
 
+#container::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  height: 100%;
+  background-color: var(--dark-grey);
+  width: 5px;
+  border-radius: 5%;
+  opacity: 0.5;
+}
+
 /* container for all links */
-#position-indicator > div {
+#container {
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 /* each individual section */
-#position-indicator > div div {
+.indicator-link {
   position: absolute;
   left: 1rem;
+  padding-left: 1rem;
+  cursor: default;
+  height: 25%;
+}
+
+.indicator-bar {
+  position: absolute;
+  height: 25%;
+  width: 5px;
+  left: 1rem;
+  transition: background-color 0.1s;
+}
+
+.indicator-link a {
+  height: 100%;
+  color: var(--dark-green);
+  transition: font-size 0.1s, color 0.1s;
+}
+
+.indicator-link a:hover {
+  color: var(--green);
+  font-size: 14px;
+  transition: font-size 0.1s;
+}
+
+.indicator-bar:hover {
   cursor: pointer;
 }
 
-#position-indicator > div div a {
-  color: var(--dark-green);
-  transition: color 0.2s;
+/* causes the indicator bars to highlight when hovering over the adjacent portfolio link */
+/* done with ids because ~ selector causes all previous matching elements to be affected when using classes */
+#home-indicator-bar:has(~ #home-indicator:hover a),
+#about-me-indicator-bar:has(~ #about-me-indicator:hover a),
+#projects-indicator-bar:has(~ #projects-indicator:hover a),
+#contact-indicator-bar:has(~ #contact-indicator:hover a) {
+  background-color: var(--grey-hover);
 }
 
-#position-indicator > div div a:hover {
+.indicator-bar:hover + .indicator-link a {
+  background-color: var(--grey-hover);
+}
+
+/* styles the link when it is the currently selected section */
+#position-indicator #container .current-indicator {
+  font-size: 16px;
   color: var(--green);
 }
 
-.current-indicator {
+.current-indicator-bar {
+  background-color: var(--text-color-hover) !important;
 }
 
-#position-indicator-block {
+.section-divider {
   position: absolute;
   background-color: var(--light-grey);
-  height: 7px;
   width: 7px;
-  left: -3.5px;
+  height: 7px;
+  border-radius: 50%;
+  left: calc(1rem - 1px);
+  z-index: 1;
 }
+
+#section-divider-one {
+  top: 0;
+}
+
+#section-divider-two {
+  top: 25%;
+}
+
+#section-divider-three {
+  top: 50%;
+}
+
+#section-divider-four {
+  top: 75%;
+}
+
+#section-divider-five {
+  top: 100%;
+}
+
+/* End position indicator section */
 
 body {
   padding: 0 50px;
@@ -121,7 +197,7 @@ header {
   margin-bottom: 3rem;
 }
 
-header h1 {
+h1 {
   grid-column: 2/3;
   grid-row: 1/2;
   font-size: 3rem;
@@ -265,6 +341,7 @@ section div p,
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: auto 1fr;
+  gap: 2rem;
 }
 
 .skills-grid ul {
@@ -282,7 +359,7 @@ section div p,
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 /* Project section */
@@ -305,7 +382,7 @@ section div p,
 .project-image {
   width: 100%;
   height: 100%;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .project-description {
@@ -329,9 +406,16 @@ div.skills-grid p {
   width: 2.5rem;
 }
 
+.project-access-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+}
+
 h4 {
   font-size: 1.2rem;
   text-align: center;
+  text-decoration: underline;
 }
 
 .project-description ul li a {
@@ -354,6 +438,14 @@ h4 {
 
 footer h2 {
   margin-top: 0;
+}
+
+footer .section-header {
+  margin-bottom: 1rem;
+}
+
+footer .portfolio-section {
+  padding-bottom: 1rem;
 }
 
 footer ul {
