@@ -30,7 +30,7 @@
         </div>
         <div id="about-me-indicator-bar" class="indicator-bar"></div>
         <div id="about-me-indicator" class="indicator-link">
-          <a class="flex items-center" href="#about-me-section">About Me</a>
+          <a class="flex items-center" href="#about-me-section">About</a>
         </div>
         <div id="projects-indicator-bar" class="indicator-bar"></div>
         <div id="projects-indicator" class="indicator-link">
@@ -55,7 +55,7 @@
     </label>
     <ul class="menu">
       <li><a class="menuItem" href="#">Home</a></li>
-      <li><a class="menuItem" href="#about-me-section">About Me</a></li>
+      <li><a class="menuItem" href="#about-me-section">About</a></li>
       <li><a class="menuItem" href="#projects-section">Projects</a></li>
       <li><a class="menuItem" href="#contact">Contact</a></li>
       <li>
@@ -69,7 +69,7 @@
         <h1>Craig Roberts</h1>
         <h2>Full Stack Web Developer</h2>
         <div class="button-row">
-          <a href="#about-me-section" id="about-me-btn">About Me</a>
+          <a href="#about-me-section" id="about-me-btn">About</a>
           <a href="#projects-section" id="projects-btn">Projects</a>
           <a href="#contact" id="contact-btn">Contact</a>
           <a id="resume-btn" href="./Resume.pdf">Resume</a>
@@ -81,13 +81,13 @@
         <div class="flex content-center">
           <h2 class="section-header">About Me</h2>
         </div>
-        <section id="about-me" class="">
+        <section id="about-me">
           <!-- Profile picutre -->
           <figure id="profile-photo">
             <img src="./assets/images/photo.png" />
           </figure>
           <!-- Bio -->
-          <div id="about-me-container">
+          <div id="about-me-text-container">
             <p>
               I am a full stack web developer based in Adelaide, South
               Australia, with a passion for creating software that improves the
@@ -114,7 +114,7 @@
             <!-- Skill set -->
             <p id="skills-header">I am experienced in the following:</p>
             <div class="skills-grid">
-              <p>Languages</p>
+              <p class="flex items-center">Languages</p>
               <ul>
                 <li>
                   <img
@@ -147,7 +147,7 @@
                     alt="CSS logo" />
                 </li>
               </ul>
-              <p>Frameworks</p>
+              <p class="flex items-center">Frameworks</p>
               <ul>
                 <li>
                   <img
@@ -187,7 +187,7 @@
                     alt="Tailwind CSS logo" />
                 </li>
               </ul>
-              <p>Other technologies</p>
+              <p class="flex items-center">Other technologies</p>
               <ul>
                 <li>
                   <img
@@ -255,7 +255,7 @@
                   fetch to get data from multiple third-party APIs.
                 </p>
               </div>
-              <ul class="technologies flex gap-1">
+              <ul class="technologies flex content-center gap-2">
                 <li>
                   <img
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
@@ -275,25 +275,22 @@
                     alt="jQuery icon" />
                 </li>
               </ul>
-              <div class="project-access-grid">
-                <!-- <h4 class="flex content-center items-center">Check it out</h4> -->
-                <ul class="flex gap-1 button-row">
-                  <li>
-                    <a
-                      href="https://github.com/craigrobertsdev/flightdex"
-                      target="_blank"
-                      >GitHub</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="https://craigrobertsdev.github.io/flightdex/"
-                      target="_blank"
-                      >Deployed App</a
-                    >
-                  </li>
-                </ul>
-              </div>
+              <ul class="project-access flex content-center gap-2 button-row">
+                <li>
+                  <a
+                    href="https://github.com/craigrobertsdev/flightdex"
+                    target="_blank"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://craigrobertsdev.github.io/flightdex/"
+                    target="_blank"
+                    >Deployed App</a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -301,6 +298,10 @@
           <div class="project-container">
             <h3 class="project-header">Employee Tracker</h3>
             <div class="project-card">
+              <img
+                src="./assets/images/employee-tracker.jpg"
+                alt="FlightDex - a domestic flight, accommodation and event search engine"
+                class="project-image" />
               <div class="project-description">
                 <p>
                   This command-line tool is designed to assist business owners
@@ -311,7 +312,7 @@
                   viewing of the relationships within an organisation.
                 </p>
               </div>
-              <ul class="technologies flex gap-1">
+              <ul class="technologies flex content-center gap-2">
                 <li>
                   <img
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
@@ -330,22 +331,15 @@
                     alt="MySQL icon" />
                 </li>
               </ul>
-              <div class="project-access-grid p">
-                <!-- <h4 class="flex content-center items-center">Check it out</h4> -->
-                <ul class="flex gap-1 button-row">
-                  <li>
-                    <a
-                      href="https://github.com/craigrobertsdev/employee-tracker"
-                      target="_blank"
-                      >GitHub</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <img
-                src="./assets/images/employee-tracker.jpg"
-                alt="FlightDex - a domestic flight, accommodation and event search engine"
-                class="project-image" />
+              <ul class="project-access flex content-center gap-2 button-row">
+                <li>
+                  <a
+                    href="https://github.com/craigrobertsdev/employee-tracker"
+                    target="_blank"
+                    >GitHub</a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -368,7 +362,7 @@
                   based on what the user entered.
                 </p>
               </div>
-              <ul class="technologies flex gap-1">
+              <ul class="technologies flex content-center gap-2">
                 <li>
                   <img
                     src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
@@ -388,19 +382,15 @@
                     alt="Bootstrap icon" />
                 </li>
               </ul>
-              <div class="project-access-grid">
-                <!-- <h4 class="flex content-center items-center">Check it out</h4> -->
-                <ul class="flex gap-1 button-row">
-                  <li>
-                    <a
-                      href="https://github.com/craigrobertsdev/Team-Profile-Generator"
-                      target="_blank"
-                      >GitHub</a
-                    >
-                  </li>
-                  <!-- <li><a href="https://craigrobertsdev.github.io/flightdex/" target="_blank">Deployed App</a></li> -->
-                </ul>
-              </div>
+              <ul class="project-access flex content-center gap-2 button-row">
+                <li>
+                  <a
+                    href="https://github.com/craigrobertsdev/Team-Profile-Generator"
+                    target="_blank"
+                    >GitHub</a
+                  >
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -440,9 +430,5 @@
       </div>
     </footer>
     <script src="./assets/js/script.js"></script>
-    <!-- Ion icons CDN -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   </body>
 </html>
