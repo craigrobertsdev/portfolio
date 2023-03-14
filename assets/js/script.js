@@ -14,6 +14,9 @@ const projectsIndicatorBar = document.getElementById("projects-indicator-bar");
 const contactIndicatorBar = document.getElementById("contact-indicator-bar");
 const indicatorContainer = document.getElementById("container");
 const currentIndicatorEl = document.getElementById("current-indicator");
+const menu = document.querySelector(".menu");
+const menuItems = document.querySelectorAll(".menuItem");
+const hamburger = document.querySelector(".hamburger-menu");
 
 const rem = parseInt(
   window.getComputedStyle(htmlElement).getPropertyValue("font-size"),
@@ -34,6 +37,12 @@ htmlElement.style.padding = "20px";
 window.addEventListener("resize", calculateSizeAndPosition);
 document.addEventListener("scroll", handleScrollForPositionIndicator);
 resumeButton.addEventListener("click", openResume);
+
+// hamburger menu events
+hamburger.addEventListener("click", toggleMenu);
+menuItems.forEach(function (menuItem) {
+  menuItem.addEventListener("click", closeMenu);
+});
 
 // setting size of landing screen based on client screen size
 let viewportHeight = window.innerHeight;
@@ -170,6 +179,18 @@ function scrollToContact() {
 
 function openResume() {
   window.location.assign("./resume.html");
+}
+
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+  } else {
+    menu.classList.add("showMenu");
+  }
+}
+
+function closeMenu() {
+  hamburger.children[0].checked = false;
 }
 
 // for scrolling down the page
