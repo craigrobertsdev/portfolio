@@ -266,6 +266,7 @@ h2 {
   font-size: 1.4rem;
   color: var(--green);
   padding: 5px;
+  text-align: center;
   background: var(--dark-grey);
   border: 1px solid var(--grey);
   border-radius: 7px;
