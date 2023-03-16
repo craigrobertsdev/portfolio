@@ -257,7 +257,7 @@ h2 {
 /* Row of buttons to different parts of portfolio */
 .button-row {
   display: flex;
-  margin-top: 2rem;
+  margin-top: 1rem;
   column-gap: 1.5rem;
   padding-bottom: 2rem;
 }
@@ -322,7 +322,7 @@ h2 {
 section div p,
 .section p,
 .project-tech-access {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding: 0 1rem 1rem 1rem;
   font-size: 1.2rem;
   line-height: 1.5;
@@ -502,10 +502,14 @@ footer ul {
 
   .project-image {
     grid-row: 1/2;
+    padding-bottom: 1rem;
   }
 
   .project-access {
     grid-row: 2/3;
+    padding-bottom: 0;
+    margin-top: 0;
+    align-items: center;
   }
 
   .technologies {
@@ -541,7 +545,7 @@ footer ul {
   }
 
   .project-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   /* change project card into a 2x3 grid to allow image to only take up half the size */
@@ -558,11 +562,14 @@ footer ul {
 
   .project-image {
     transform: scale(0.8);
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
 
   .project-container:nth-of-type(n) .project-description {
     grid-column: 1/-1;
+    width: 85%;
+    margin: auto;
+    text-align: justify;
   }
 
   .project-container:nth-of-type(n) .technologies {
@@ -579,8 +586,20 @@ footer ul {
 }
 
 @media only screen and (max-width: 1100px) {
+  .project-header {
+    margin-bottom: 2rem;
+  }
   .project-image {
     transform: scale(1);
+    padding-bottom: 1rem;
+  }
+
+  .project-container:nth-of-type(n) .project-description {
+    width: auto;
+  }
+
+  footer ul {
+    margin: 0 5%;
   }
 }
 
@@ -711,9 +730,10 @@ footer ul {
     grid-row: 2/3;
   }
 
-  .project-card .project-access:nth-last-of-type(n) {
+  .project-card .project-access:nth-of-type(n) {
     grid-column: 1/2;
   }
+
   .project-card .technologies:nth-of-type(n) {
     grid-column: 2/3;
     grid-row: 3/4;
@@ -724,6 +744,7 @@ footer ul {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     row-gap: 1rem;
+    margin: 0 10%;
   }
 
   #contact .portfolio-section ul li {
@@ -775,6 +796,7 @@ footer ul {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     row-gap: 1rem;
+    width: 90%;
   }
 }
 
