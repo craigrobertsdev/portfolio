@@ -267,7 +267,7 @@ h2 {
   color: var(--green);
   padding: 5px;
   text-align: center;
-  background: var(--dark-grey);
+  background: var(--black-grey);
   border: 1px solid var(--grey);
   border-radius: 7px;
   cursor: pointer;
@@ -804,8 +804,7 @@ footer ul {
 
   .project-image-sm {
     display: initial;
-    max-height: 500px;
-    width: auto;
+    max-width: 100%;
   }
 
   .portfolio-section {
@@ -867,18 +866,6 @@ footer ul {
 
   #profile-photo img {
     display: block;
-    margin: auto;
-  }
-}
-
-@media only screen and (max-width: 390px) {
-  .project-image {
-    height: auto;
-    width: auto;
-  }
-
-  .project-image-sm {
-    max-width: 290px;
     margin: auto;
   }
 }
