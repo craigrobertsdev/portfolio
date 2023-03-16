@@ -9,7 +9,7 @@
 
 <br>
 <p align="center">
-  <img alt="Portfolio page" src="https://github.com/craigrobertsdev/portfolio/blob/main/Portfolio%20screenshot.jpg">
+  <img alt="Portfolio page" src="https://github.com/craigrobertsdev/portfolio/blob/main/assets/images/screenshot.jpg">
 </p>
 
 
