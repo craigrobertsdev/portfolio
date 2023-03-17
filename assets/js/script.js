@@ -3,7 +3,6 @@ const headerSection = document.querySelector("header");
 const aboutMeSection = document.getElementById("about-me");
 const projectsSection = document.getElementById("projects");
 const contactSection = document.getElementById("contact");
-const resumeButton = document.getElementById("resume-btn");
 const homeIndicator = document.getElementById("home-indicator");
 const aboutMeIndicator = document.getElementById("about-me-indicator");
 const projectsIndicator = document.getElementById("projects-indicator");
@@ -37,7 +36,6 @@ htmlElement.style.padding = "20px";
 // event listeners
 window.addEventListener("resize", calculateSizeAndPosition);
 document.addEventListener("scroll", handleScrollForPositionIndicator);
-resumeButton.addEventListener("click", openResume);
 
 // hamburger menu events
 hamburger.addEventListener("click", toggleMenu);
@@ -178,10 +176,6 @@ function scrollToProjects() {
 
 function scrollToContact() {
   contactSection.scrollIntoView({ block: "start", behavior: "smooth" });
-}
-
-function openResume() {
-  window.location.assign("./resume.html");
 }
 
 function toggleMenu() {

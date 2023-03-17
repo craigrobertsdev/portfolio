@@ -55,7 +55,7 @@ html {
 /* Only displayed on screens smaller than 992px */
 .hamburger-menu,
 .menu {
-  visibility: hidden;
+  display: none;
 }
 
 /* Position indicator on left side of screen for larger screen sizes */
@@ -621,7 +621,6 @@ footer ul {
 
   .hamburger-menu {
     display: initial;
-    visibility: visible;
   }
 
   /* hamburger menu */
@@ -694,6 +693,7 @@ footer ul {
 
   .menu {
     visibility: initial;
+    display: initial;
     position: fixed;
     transform: translateX(-100%);
     transition: transform 0.2s;
