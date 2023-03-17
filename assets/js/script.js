@@ -14,10 +14,11 @@ const projectsIndicatorBar = document.getElementById("projects-indicator-bar");
 const contactIndicatorBar = document.getElementById("contact-indicator-bar");
 const indicatorContainer = document.getElementById("container");
 const currentIndicatorEl = document.getElementById("current-indicator");
+const hamburger = document.querySelector(".hamburger-menu");
 const menu = document.querySelector(".menu");
 const menuItems = document.querySelectorAll(".menuItem");
-const hamburger = document.querySelector(".hamburger-menu");
 
+// for all rem based calculations
 const rem = parseInt(
   window.getComputedStyle(htmlElement).getPropertyValue("font-size"),
   10
@@ -45,9 +46,11 @@ menuItems.forEach(function (menuItem) {
 });
 
 // setting size of landing screen based on client screen size
-let viewportHeight = window.innerHeight;
-const htmlPadding = pxToNumber(htmlElement.style.padding);
-headerSection.style.height = viewportHeight - htmlPadding + "px";
+function setViewportHeight() {
+  let viewportHeight = window.innerHeight;
+  const htmlPadding = pxToNumber(htmlElement.style.padding);
+  headerSection.style.height = viewportHeight - htmlPadding + "px";
+}
 
 // apply vertical positions to indicator links
 function setContainerHeightandIndicatorPositions() {
@@ -211,6 +214,7 @@ function setIndicatorContainerHeight() {
 
 // for calculating the screen size to appropriately position the scroll indicator elements
 function calculateSizeAndPosition() {
+  setViewportHeight();
   setContainerHeightandIndicatorPositions();
   setScrollIndicatorPositions();
 }
