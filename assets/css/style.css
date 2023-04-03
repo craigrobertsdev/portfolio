@@ -355,7 +355,7 @@ section div p,
 }
 
 /* Change Express.js icon from black to white   */
-#express {
+.express {
   filter: invert(100%);
 }
 
@@ -428,6 +428,7 @@ section div p,
 .technologies {
   margin-left: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .skills-grid li,
@@ -695,6 +696,7 @@ footer ul {
     visibility: initial;
     display: initial;
     position: fixed;
+    width: 75%;
     transform: translateX(-100%);
     transition: transform 0.2s;
     top: 0;
@@ -709,10 +711,12 @@ footer ul {
 
   .menu li {
     margin-top: 1rem;
+    text-align: center;
   }
 
   .menu li a {
     font-size: 2rem;
+    font-weight: 600;
     margin-left: 1rem;
     color: var(--dark-green);
   }

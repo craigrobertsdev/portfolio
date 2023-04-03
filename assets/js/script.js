@@ -166,18 +166,6 @@ function calculatePositionIndicatorHeight(element) {
   return relativeHeight + "px";
 }
 
-function scrollToAboutMe() {
-  aboutMeSection.scrollIntoView({ block: "start", behavior: "smooth" });
-}
-
-function scrollToProjects() {
-  projectsSection.scrollIntoView({ block: "start", behavior: "smooth" });
-}
-
-function scrollToContact() {
-  contactSection.scrollIntoView({ block: "start", behavior: "smooth" });
-}
-
 function toggleMenu() {
   if (menu.classList.contains("showMenu")) {
     menu.classList.remove("showMenu");
